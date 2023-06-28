@@ -1,0 +1,16 @@
+.about {
+  padding: 6rem 4rem;
+  .about__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      width: 50%;
+      font-size: 4rem;
+    }
+    p {
+      width: 50%;
+      
+    }
+  }
+}

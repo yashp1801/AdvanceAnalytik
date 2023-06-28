@@ -1,0 +1,17 @@
+const body = {
+  budrate: "",
+  MQTT_url: "",
+  MQTT_id: "",
+  MQTT_password: "",
+  parity: "",
+  data_bit: "",
+  stop_bit: "",
+  slave_id: "",
+  starting_address: "",
+  length: "",
+  delay: "",
+  client_id: "",
+  public_event: "",
+  server_port: "",
+  suscriber: "",
+};

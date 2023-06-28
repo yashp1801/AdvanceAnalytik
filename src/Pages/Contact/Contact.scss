@@ -1,0 +1,55 @@
+.contact {
+  padding: 6rem 4rem;
+  .contact__header {
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .contact__details__map__wrapper {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    h2 {
+      font-size: 2.2rem;
+    }
+    .contact__details {
+      h3 {
+        font-size: 1.2rem;
+        margin-top: 5%;
+      }
+    }
+  }
+  .contact__content__cards__wrapper {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+    .contact__content__card {
+      padding: 2rem;
+      border-radius: 20px;
+      -webkit-box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.151);
+      border: 1px solid #c5c5c5;
+      h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: red;
+      }
+      p {
+        font-size: 1.1rem;
+        color: #000;
+      }
+    }
+  }
+  .contact__footer {
+    font-size: 1.9rem;
+    margin-top: 10%;
+    text-align: center;
+  }
+}
