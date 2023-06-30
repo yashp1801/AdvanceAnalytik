@@ -7,6 +7,9 @@ import Market from "./Pages/Markets/Market";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
+import Career from "./Pages/Career/Career";
+import Products from "./Pages/Products/Products";
+import Iotpage from "./Pages/Services/Iot";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -29,9 +32,12 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Career />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/market/:marketName" element={<Market />} />
+            <Route path="/services/analyticalinstrumentation" element={<Iotpage />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       )}
     </>

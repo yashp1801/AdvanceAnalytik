@@ -1,0 +1,83 @@
+// LandingPage.scss
+
+.landing-page {
+  text-align: center;
+  padding: 50px;
+
+  &__header {
+    margin-bottom: 30px;
+
+    .landing-page__title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .landing-page__subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-top: 10px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 50px;
+
+    .landing-page__section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .landing-page__instrument {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+
+      .landing-page__instrument-info {
+        text-align: left;
+
+        .landing-page__instrument-title {
+          font-size: 24px;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        .landing-page__instrument-description {
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 10px;
+        }
+      }
+
+      .landing-page__instrument-image {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__footer {
+    padding: 30px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+
+    .landing-page__footer-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .landing-page__footer-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  }
+}

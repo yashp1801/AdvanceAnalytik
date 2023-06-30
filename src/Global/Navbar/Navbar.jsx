@@ -25,16 +25,57 @@ const Navbar = () => {
             <Link className="navbar__link">Home</Link>
           </li>
           <li>
-            <Link   to={"/about"}   className="navbar__link">About</Link>
+            <li>
+              <Link to={"/products"} className="navbar__link">
+                Products
+              </Link>
+            </li>
+            <Link to={"/about"} className="navbar__link">
+              About
+            </Link>
+          </li>
+
+          <li>
+            <Link className="navbar__link">Services</Link>
+            <div className="markets__submenu">
+              <div className="markets__submenu__links__wrapper">
+                <Link
+                  className="markets__submenu__link"
+                  to={"/services/analyticalinstrumentation"}
+                >
+                  Analytical Instrumentation
+                </Link>
+                <Link
+                  className="markets__submenu__link"
+                  to={"/services/engineeringandconsultancyservices"}
+                >
+                  Engineering and Consultancy Services
+                </Link>
+                <Link
+                  className="markets__submenu__link"
+                  to={"/services/softwaredevelopment"}
+                >
+                  Software Development
+                </Link>
+                <Link
+                  className="markets__submenu__link"
+                  to={"/services/iotdevices"}
+                >
+                  IOT Devices
+                </Link>
+              </div>
+            </div>
           </li>
           <li>
-            <Link to={"/contact"}  className="navbar__link">Contact</Link>
+            <Link to={"/contact"} className="navbar__link">
+              Contact
+            </Link>
           </li>
+
           <li>
-            <Link className="navbar__link">Products</Link>
-          </li>
-          <li>
-            <Link className="navbar__link">Carrers</Link>
+            <Link to={"/careers"} className="navbar__link">
+              Careers
+            </Link>
           </li>
           <li>
             <Link className="navbar__link">Blog</Link>

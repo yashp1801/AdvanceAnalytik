@@ -1,0 +1,122 @@
+// Career.scss
+
+.career-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+
+  .career-page__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .career-page__description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .career-page__why-join {
+    margin-bottom: 40px;
+
+    .career-page__subtitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .career-page__reasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      .career-page__reason {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 300px;
+
+        img {
+          width: 100%;
+          max-width: 200px;
+          margin-bottom: 20px;
+          border-radius: 10px;
+        }
+
+        h4 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .career-page__how-to-apply {
+    .career-page__subtitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .career-page__form {
+      margin-top: 20px;
+
+      .form-group {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          width: 100%;
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+
+          &:focus {
+            outline: none;
+            border-color: #ff6f00;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          height: 100px;
+        }
+      }
+
+      .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #d50000c4;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #d50100;
+        }
+      }
+    }
+  }
+}

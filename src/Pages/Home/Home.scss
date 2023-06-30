@@ -1,29 +1,130 @@
 .home {
-  color: red;
   width: 100%;
-  height: 70vh  ;
+  height: 100vh;
+  &__header {
+    margin-bottom: 30px;
+
+    span {
+      color: #7f5af0;
+      font-weight: bold;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+
+    span {
+      color: #7f5af0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  &__content {
+    margin-bottom: 50px;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    span {
+      color: #7f5af0;
+      font-weight: bold;
+    }
+  }
+
+  &__product-list-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  &__product-list-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 5px;
+
+      &:before {
+        content: "• ";
+        color: #333;
+      }
+    }
+  }
+
+  &__tailored-solutions-title,
+  &__partnering-title,
+  &__empowering-title,
+  &__contact-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
   .swiper {
     width: 100%;
     height: 100%;
+
     .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-    
-        /* Center slide text vertically */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      .slider-slide {
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          object-fit: cover;
+          transition: opacity 0.3s ease;
+        }
+
+        .slider-content {
+          z-index: 1;
+          color: #fff;
+          padding: 2%;
+          background-color: #d50100; /* Use the variable from _variables.scss */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          position: absolute;
+          bottom: 0;
+          left: 5%;
+          width: 60%;
+          height: 50%;
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+          h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
           }
+          
+          p {
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
       }
+    }
   }
-
-  
-
-
 }
