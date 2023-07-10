@@ -1,0 +1,82 @@
+.analyticalInstrumentation {
+  .analyticalInstrumentation__header {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .analyticalInstrumentation__header__content {
+      background-color: #D50100;
+      padding: 2%;
+      position: absolute;
+      bottom: -25%;
+      left: 10%;
+      width: 80%;
+      height: max-content;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      color: #fff;
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.205);
+      h1 {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 500;
+      }
+    }
+  }
+  .analyticalInstrumentation__content {
+    margin-top: 10%;
+    user-select: none;
+    .analyticalInstrumentation__content__cards__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1%;
+      .analyticalInstrumentation__content__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #a8a8a8;
+        border-radius: 5px;
+        padding: 1%;
+        &:hover .analyticalInstrumentation__content__card__img {
+          scale: 1.07;
+          transition: 0.2s ease;
+        }
+        .analyticalInstrumentation__content__card__img__wrapper {
+          height: 300px;
+          width: max-content;
+          overflow: hidden;
+          .analyticalInstrumentation__content__card__img {
+            height: 100%;
+            transition: 0.2s ease;
+          }
+        }
+        .analyticalInstrumentation__content__card__content {
+          margin-top: 1%;
+          width: 100%;
+          h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+          }
+          .analyticalInstrumentation__content__card__content__link{
+            font-size: 1rem;
+            text-decoration: none;
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

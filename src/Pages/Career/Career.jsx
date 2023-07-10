@@ -1,113 +1,88 @@
 import React from "react";
 import "./Career.scss";
+import careerheaderunderline from "./careerheaderunderline.png";
+import careersImg from "./careersImg.jpg";
+import data from "./jobOpenings";
+import { Link } from "react-router-dom";
+import { BiTime, BiCurrentLocation } from "react-icons/bi";
+import { FiArrowUpRight } from "react-icons/fi";
+import Faq from "./Faq";
 
 const Career = () => {
   return (
-    <div className="career-page">
-      <h2 className="career-page__title">Join Our Team and Make an Impact</h2>
-      <p className="career-page__description">
-        Are you looking for an exciting career opportunity in the field of
-        advanced monitoring solutions? Advance Analytik is a leading company
-        specializing in the development and distribution of cutting-edge
-        monitoring technologies for various industries. We are dedicated to
-        providing innovative solutions that empower our clients to achieve
-        excellence in quality control, regulatory compliance, and environmental
-        protection.
-      </p>
-      <div className="career-page__why-join">
-        <h3 className="career-page__subtitle">Why Join Advance Analytik?</h3>
-        <div className="career-page__reasons">
-          <div className="career-page__reason">
-            <img src="img" alt="Cutting-Edge Technology" />
-            <h4>Cutting-Edge Technology</h4>
-            <p>
-              As a member of our team, you will have the opportunity to work
-              with state-of-the-art monitoring technologies and contribute to
-              the development of innovative solutions that address the evolving
-              needs of our clients.
-            </p>
-          </div>
-          <div className="career-page__reason">
-            <img src="src" alt="Collaborative Environment" />
-            <h4>Collaborative Environment</h4>
-            <p>
-              We foster a collaborative and inclusive work environment where
-              ideas are encouraged, and teamwork is valued. You will have the
-              chance to collaborate with experts in the industry, learn from
-              their insights, and contribute to meaningful projects.
-            </p>
-          </div>
-          <div className="career-page__reason">
-            <img src="src" alt="Professional Growth" />
-            <h4>Professional Growth</h4>
-            <p>
-              We believe in investing in the growth and development of our team
-              members. Through ongoing training programs, mentorship
-              opportunities, and challenging projects, we provide a platform for
-              you to enhance your skills, expand your knowledge, and advance
-              your career.
-            </p>
+    <div className="career">
+      <div className="careers__header">
+        <div className="careers__header__title">
+          <h1>Careers</h1>
+          <img src={careerheaderunderline} alt="img" />
+        </div>
+        <p>
+          Learn more about the company and the team behind it. We are hiring!
+          Join us.
+        </p>
+      </div>
+      <div className="careers__page__sections__wrapper">
+        <div className="careers__section__one">
+          <h1>Shape the Future of Analytical Science with Us.</h1>
+          <p>
+            At Advance Analytik, we believe that our team is the driving force
+            behind our success. We are constantly seeking talented individuals
+            who are passionate about analytical excellence and eager to make a
+            meaningful impact in the field of scientific analysis. Join us and
+            embark on a rewarding journey that combines innovation,
+            collaboration, and professional growth.
+          </p>
+          <img src={careersImg} alt="" />
+        </div>
+        <div className="careers__section__two">
+          <h1>Open Positions</h1>
+          <p>
+            Join our team, drive innovation, and make a meaningful impact in
+            analytical excellence. Explore exciting roles, apply today, and
+            shape the future with Advance Analytik.
+          </p>
+          <div className="careers__section__two__jobportal__cards__wrapper">
+            {data.map((item) => {
+              return (
+                <div
+                  className="careers__section__two__jobportal__card"
+                  key={item.id}
+                >
+                  <div className="careers__section__two__jobportal__card__content__wrapper">
+                    <p>{item.category}</p>
+                    <h1>{item.title}</h1>
+                    <div className="careers__section__two__jobportal__card__footertags__wrapper">
+                      <div className="careers__section__two__jobportal__card__footertag">
+                        <BiTime className="careers__section__two__jobportal__card__footertag__icon" />
+                        <span>{item.workTime}</span>
+                      </div>
+                      <div className="careers__section__two__jobportal__card__footertag">
+                        <BiCurrentLocation className="careers__section__two__jobportal__card__footertag__icon" />
+                        <span>{item.workLocation}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="careers__section__two__jobportal__card__portalLink__wrapper">
+                    <Link
+                      className="careers__section__two__jobportal__card__portalLink"
+                      to={item.portalLink}
+                      target="_blank"
+                    >
+                      View job
+                      <FiArrowUpRight
+                        className="careers__section__two__jobportal__card__portalLink__icon
+                    "
+                      />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
-      <div className="career-page__how-to-apply">
-        <h3 className="career-page__subtitle">How to Apply</h3>
-        <p>
-          If you are ready to take the next step in your career and join our
-          team, we invite you to explore our current job openings listed below.
-          To apply, please submit your resume and a cover letter outlining your
-          qualifications, experience, and why you are interested in joining
-          Advance Analytik. Our HR team will review your application and reach
-          out to qualified candidates for further evaluation.
-        </p>
-        <p>
-          Join us at Advance Analytik and be part of a team that is
-          revolutionizing the field of advanced monitoring solutions. Together,
-          we can make a meaningful impact and drive positive change.
-        </p>
-        <h3 className="career-page__subtitle">Apply Now</h3>
-        <form className="career-page__form" >
-          <div className="form-group">
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="resume">Upload Resume</label>
-            <input
-              type="file"
-              id="resume"
-              name="resume"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="coverLetter">Cover Letter</label>
-            <textarea
-              id="coverLetter"
-              name="coverLetter"
-             
-              rows={5}
-              required
-            ></textarea>
-          </div>
-          <button type="submit" className="btn-primary">
-            Submit Application
-          </button>
-        </form>
+        <div className="careers__section__three">
+          <Faq />
+        </div>
       </div>
     </div>
   );

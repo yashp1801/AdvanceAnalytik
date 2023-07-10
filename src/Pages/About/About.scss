@@ -1,40 +1,161 @@
-.about-us-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+.about__page {
+  height: max-content;
+  padding: 7rem 0;
 
-  &__content {
-    max-width: 800px;
-    margin-top: 20px;
-  }
-
-  &__title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
-  &__subtitle {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-
-  p {
-    margin-bottom: 20px;
-    color: #666;
-    line-height: 1.5;
-  }
-
-  img {
+  .about__page__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .about__header {
+      width: 80%;
+      h1 {
+        font-size: 4rem;
+        font-weight: 600;
+      }
+      span {
+        color: red;
+      }
+    }
+    .about__page__intro__wrapper {
+      width: 80%;
+      display: flex;
+      gap: 5%;
+      margin-top: 10%;
+      img {
+        width: 50%;
+        border-radius: 20px;
+      }
+      .about__page__intro__content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          text-align: justify;
+        }
+        .about__page__intro__content__link {
+          padding: 10px 20px;
+          border: 1px solid red;
+          border-radius: 10px;
+          text-decoration: none;
+          font-weight: 500;
+          position: relative;
+          transition: 0.2s;
+          overflow: hidden;
+          color: red;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: red;
+            border-radius: 10px;
+            transition: 0.2s;
+            z-index: -1;
+          }
+          &:hover {
+            color: #fff;
+            transition: 0.2s;
+          }
+          &:hover::before {
+            width: 100%;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+    .about__page__section__one__wrapper {
+      width: 80%;
+      margin-top: 5%;
+      display: flex;
+      gap: 5%;
+
+      .about__page__section__one__card {
+        padding: 3%;
+        background-color: #f7f7f7;
+        border-radius: 20px;
+        .about__page__section__one__card__content__card__icon {
+          padding: 10px;
+          font-size: 4rem;
+          border-radius: 10px;
+          background-color: #fff;
+          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.13);
+        }
+        h2 {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+        p {
+          text-align: justify;
+        }
+      }
+    }
+    .about__page__section__two__wrapper {
+      width: 80%;
+      margin-top: 8%;
+      height: max-content;
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+      .about__page__section__two__content__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 5%;
+        margin-top: 5%;
+        height: 100%;
+        .about__page__section__two__img__wrapper {
+          height: 800px;
+          width: 40%;
+          border-radius: 20px;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .about__page__section__two__cards__wrapper {
+          width: 60%;
+
+          .about__page__section__two__card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 4%;
+            padding: 1%;
+            border-radius: 10px;
+            .about__page__section__two__card__icon {
+              font-size: 10rem;
+              height: 100%;
+              padding: 10px;
+              border-radius: 10px;
+              box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.185);
+              border: 1px solid #1414142c;
+              color: red;
+            }
+            .about__page__section__two__card__content {
+              margin-top: 1%;
+              h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+              }
+              p {
+                font-size: 0.9rem;
+                font-weight: 500;
+                text-align: justify;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

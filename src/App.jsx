@@ -9,7 +9,12 @@ import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
 import Career from "./Pages/Career/Career";
 import Products from "./Pages/Products/Products";
-import Iotpage from "./Pages/Services/Iot";
+import AnalyticalInstrumentation from "./Pages/Products/AnalyticalInstrumentation";
+import SelectedProductPopup from "./Pages/Products/SelectedProductPopup";
+import IotDevicesPage from "./Pages/Products/IotDevicesPage";
+import ScrollToTopButton from "./Global/ScrollToTopButton/ScrollToTopButton";
+import EandC from "./Pages/Products/EandC";
+import SoftwareDevelopmentServices from "./Pages/Products/SoftwareDevelopnment";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -28,6 +33,7 @@ const App = () => {
       ) : (
         <Router>
           <Navbar />
+          <ScrollToTopButton />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
@@ -35,9 +41,26 @@ const App = () => {
             <Route path="/careers" element={<Career />} />
             <Route path="/products" element={<Products />} />
             <Route path="/market/:marketName" element={<Market />} />
-            <Route path="/services/analyticalinstrumentation" element={<Iotpage />} />
+            <Route
+              path="/products/selectedproduct"
+              element={<SelectedProductPopup />}
+            />
+            <Route
+              path="/services/analyticalinstrumentation"
+              element={<AnalyticalInstrumentation />}
+            />
+
+            <Route path="/services/iotdevices" element={<IotDevicesPage />} />
+            <Route
+              path="/services/engineeringandconsultancyservices"
+              element={<EandC />}
+            />
+            <Route
+              path="/services/softwaredevelopmentservices"
+              element={<SoftwareDevelopmentServices />}
+            />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       )}
     </>

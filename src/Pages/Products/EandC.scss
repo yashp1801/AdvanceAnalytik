@@ -1,0 +1,72 @@
+// EandCPage.scss
+.eandc-page {
+  .career-page-header {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .career__page__hero__content {
+    background: linear-gradient(
+      to right,
+      #ff0000fd,
+      #ff0000fd,
+      #ff0000fd,
+      #ff0000ee,
+      rgba(255, 0, 0, 0)
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    padding: 2%;
+    color: #fff;
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p {
+      width: 80%;
+    }
+  }
+  .eandc__card__wrapper {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .eandc__card {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      padding: 2% 0;
+      border-bottom: 1px solid #0000006b;
+      gap: 2%;
+      .eandc__card__content {
+        width: 50%;
+        h2 {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+        p {
+          margin-top: 2%;
+          text-align: justify;
+        }
+      }
+      .eandc__card__img__wrapper {
+        width: 50%;
+        height: 300px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

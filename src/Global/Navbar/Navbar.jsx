@@ -1,42 +1,60 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./Navbar.scss";
-import Logo from "./AdvanceAnalytik.png";
+import AAlogo from "./AdvanceAnalytik.png";
+import hungaryFlag from "./hungary.png";
+import ukFlag from "./uk.jpg";
+import { Link } from "react-router-dom";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
+  const [navbarBgColor, setNavbarBgColor] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setNavbarBgColor("scrolled");
+      } else {
+        setNavbarBgColor("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <nav className="navbar">
       <div
         style={{
           width: "100%",
-          height: "20px",
+          height: "15px",
         }}
       >
         <div style={{ backgroundColor: "#cd2a3e", height: "33.33%" }}></div>
         <div style={{ backgroundColor: "#fff", height: "33.33%" }}></div>
         <div style={{ backgroundColor: "#008000", height: "33.33%" }}></div>
       </div>
-      <div className="wrapper">
-        <div className="navbar__logo">
-          <img src={Logo} alt="Advance Analytik Logo" />
+      <div className="navbar__header">
+        <div className="navbar__header__logo">
+          <img src={AAlogo} alt="" />
         </div>
         <ul className="navbar__links__wrapper">
           <li>
-            <Link className="navbar__link">Home</Link>
+            <Link to={"/"} className={`navbar__link ${navbarBgColor}  `}>
+              Home
+            </Link>
           </li>
           <li>
-            <li>
-              <Link to={"/products"} className="navbar__link">
-                Products
-              </Link>
-            </li>
-            <Link to={"/about"} className="navbar__link">
+            <Link to={"/about"} className={`navbar__link  `}>
               About
             </Link>
           </li>
-
           <li>
-            <Link className="navbar__link">Services</Link>
+            <Link className={`navbar__link   `}>
+              Products <IoMdArrowDropdown className="navbar__link__icon" />{" "}
+            </Link>
             <div className="markets__submenu">
               <div className="markets__submenu__links__wrapper">
                 <Link
@@ -53,7 +71,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="markets__submenu__link"
-                  to={"/services/softwaredevelopment"}
+                  to={"/services/softwaredevelopmentservices"}
                 >
                   Software Development
                 </Link>
@@ -67,22 +85,9 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <Link to={"/contact"} className="navbar__link">
-              Contact
+            <Link className={`navbar__link   `}>
+              Market <IoMdArrowDropdown className="navbar__link__icon" />{" "}
             </Link>
-          </li>
-
-          <li>
-            <Link to={"/careers"} className="navbar__link">
-              Careers
-            </Link>
-          </li>
-          <li>
-            <Link className="navbar__link">Blog</Link>
-          </li>
-
-          <li>
-            <Link className="navbar__link">Market</Link>
             <div className="markets__submenu">
               <div className="markets__submenu__links__wrapper">
                 <Link
@@ -166,7 +171,33 @@ const Navbar = () => {
               </div>
             </div>
           </li>
+          <li>
+            <Link className={`navbar__link   `}>Blog</Link>
+          </li>
+          <li>
+            <Link to={"/careers"} className={`navbar__link   `}>
+              Careers
+            </Link>
+          </li>
+
+          <li>
+            <Link to={"/contact"} className={`navbar__link   `}>
+              Contact
+            </Link>
+          </li>
         </ul>
+        <div className="navbar__header__language__changer__wrapper">
+          <div className="navbar__header__language__changer">
+            <img
+              src={ukFlag}
+              alt=""
+              style={{ borderRight: "1px solid #000000", paddingRight: "10px" }}
+            />
+          </div>
+          <div className="navbar__header__language__changer">
+            <img src={hungaryFlag} alt="" />
+          </div>
+        </div>
       </div>
     </nav>
   );

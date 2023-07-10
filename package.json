@@ -1,5 +1,6 @@
 {
   "name": "advanceanalytik",
+  "homepage": "https://advanceanalytik.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^10.12.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.0",
     "sass": "^1.63.6",
     "swiper": "^9.4.1"

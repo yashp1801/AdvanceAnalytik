@@ -1,40 +1,50 @@
 import React from "react";
 import "./Contact.scss";
+import heroImg from "./contactheroimg.png";
+import { RiChatSmile3Line } from "react-icons/ri";
+import { IoChatbubblesOutline, IoCallOutline } from "react-icons/io5";
+import { LuMapPin } from "react-icons/lu";
 
 const Contact = () => {
   return (
     <div className="contact">
+      <img src={heroImg} alt="" />
       <div className="contact__header">
         <h1>Get in touch with us</h1>
-        <p>
-          Thank you for your interest in Advance Analytik! We value your
-          inquiries, feedback, and collaboration opportunities. We encourage you
-          to reach out to us using the contact information provided below. Our
-          dedicated team is ready to assist you and provide the information you
-          need.
-        </p>
+        <p>Let us know how we can help!</p>
       </div>
-      <div className="contact__details__map__wrapper">
-        <div className="contact__details">
-          <h2>Contact Information</h2>
-          <h3>Address</h3>
-          <p>Advance Analytik KFT 1024,</p>
-          <p>Budapest, Keleti Karoly utca 48.</p>
-          <p>fszt.</p>
-          <p>Hungary</p>
-          <h3>Phone Number</h3>
-          <p>+36 70 328 6139</p>
-          <h3>Email</h3>
-          <p>SALES@ADVANCEANALYTIK.COM</p>
+      <div className="contact__card__wrapper">
+        <div className="contact__card">
+          <RiChatSmile3Line className="contact__card__icon" />
+          <div className="contact__card__content">
+            <h2>Chat to sales</h2>
+            <p>Speak to out friendly team.</p>
+            <span>sales@advanceanalytik.com</span>
+          </div>
         </div>
-        <div className="contact__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2694.867479030365!2d19.023316682036544!3d47.51197198530745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAdvance%20Analytik%20KFT%201024%2C%20Budapest%2C%20Keleti%20Karoly%20utca%2048.%20fszt.!5e0!3m2!1sen!2sin!4v1687862057656!5m2!1sen!2sin"
-            width="600"
-            height="450"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div className="contact__card">
+          <IoChatbubblesOutline className="contact__card__icon" />
+          <div className="contact__card__content">
+            <h2>Chat to support</h2>
+            <p>We are here to help.</p>
+            <span>support@advanceanalytik.com</span>
+          </div>
+        </div>
+        <div className="contact__card">
+          <LuMapPin className="contact__card__icon" />
+          <div className="contact__card__content">
+            <h2>Visit us</h2>
+            <p>Visit our office HQ.</p>
+            <span>View on Google Maps</span>
+          </div>
+        </div>
+        <div className="contact__card">
+          <IoCallOutline className="contact__card__icon" />
+          <div className="contact__card__content">
+            <h2>Call us</h2>
+            <p>Mon-Fri from 10am to 7pm</p>
+            <span>+36 70 328 6139</span>
+          </div>
         </div>
       </div>
       <div className="contact__content__cards__wrapper">

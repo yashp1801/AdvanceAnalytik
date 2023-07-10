@@ -1,80 +1,70 @@
-import React, { useState } from "react";
-import productsData from "./productsData";
+import { useState, useEffect } from "react";
 import "./Products.scss";
+import products from "./productsData";
+import { RiArrowDropRightLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [activeTab, setActiveTab] = useState("All");
+  const [productId, setProductId] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const openDetailsModal = (product) => {
-    setSelectedProduct(product);
-  };
+  // Filter products based on the active tab
+  const filteredProducts =
+    activeTab === "All"
+      ? products
+      : products.filter((product) => product.category === activeTab);
 
-  const closeDetailsModal = () => {
-    setSelectedProduct(null);
+  // Handle click on View Details button
+  const handleClick = (productId) => {
+    setProductId(productId);
+    navigate("/products/selectedproduct", { state: { productId } });
   };
 
   return (
-    <div className="products-container">
-      {productsData.map((product) => (
-        <div className="product-card" key={product.id}>
-          <img
-            className="product-image"
-            src={product.image}
-            alt={product.name}
-          />
-          <h3 className="product-name">{product.name}</h3>
-          <button
-            className="more-details-button"
-            onClick={() => openDetailsModal(product)}
-          >
-            More Details
-          </button>
-        </div>
-      ))}
-
-      {selectedProduct && (
-        <div className="product__details__modal">
-          <div className="product__details">
-            <div className="product__header">
-              <h1>{selectedProduct.name}</h1>
-              <button className="close-button" onClick={closeDetailsModal}>
-                Close
+    <div className="products__wrapper">
+      <div className="products__header__wrapper">
+        <h1> Products</h1>
+        <p>Discover the Perfect Products for Your Every Need!</p>
+      </div>
+      <div className="tabs">
+        <button
+          className={activeTab === "All" ? "active" : ""}
+          onClick={() => setActiveTab("All")}
+        >
+          All
+        </button>
+        <button
+          className={activeTab === "Sensors" ? "active" : ""}
+          onClick={() => setActiveTab("Sensors")}
+        >
+          Sensors
+        </button>
+        <button
+          className={activeTab === "Controllers" ? "active" : ""}
+          onClick={() => setActiveTab("Controllers")}
+        >
+          Controllers
+        </button>
+      </div>
+      <div className="products">
+        {filteredProducts.map((product) => (
+          <div className="product-item" key={product.productId}>
+            <img src={product.img} alt="img" className="product__item__img" />
+            <div className="product__btn__name__wrapper">
+              <p>{product.name}</p>
+              <button onClick={() => handleClick(product.productId)}>
+                View Details{" "}
+                <RiArrowDropRightLine className="product__card__btn__icon" />{" "}
               </button>
             </div>
-            <div className="product__details__content">
-              <div className="product__details__content__image__wrapper">
-                <img
-                  className="product-details-image"
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                />
-              </div>
-              <p>{selectedProduct.details}</p>
-            </div>
-            <div className="product__details__description">
-              <h3>Features:</h3>
-              <ul className="product-features">
-                {selectedProduct.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-              <h3>Specifications:</h3>
-              <table className="product-specifications">
-                <tbody>
-                  {Object.entries(selectedProduct.specifications).map(
-                    ([key, value]) => (
-                      <tr key={key}>
-                        <th>{key}</th>
-                        <td>{value}</td>
-                      </tr>
-                    )
-                  )}
-                </tbody>
-              </table>
-            </div>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 };

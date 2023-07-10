@@ -1,50 +1,125 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Home.scss";
 import HeroSlider from "./Components/HeroSlider";
+import homeAbout from "./images/homeAbout.jpg";
+import homeProducts from "./images/homeproducts.png";
+import { Link } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import abstractDots from "./images/abstractdots.png";
+import HomeWhyUs from "./Components/HomeWhyUs";
 
 const Home = () => {
+  // Animation variants
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const slideUpVariants = {
+    hidden: { y: 100 },
+    visible: { y: 0 },
+  };
+
   return (
     <div className="home">
       <HeroSlider />
-      <div className="home__header">
-        <h1 className="home__title">Welcome to Advance Analytik</h1>
-        <p className="home__subtitle">
-          Revolutionizing Online Monitoring Solutions
-        </p>
-      </div>
-      <div className="home__content">
-        <p className="home__description">
-          At Advance Analytik, we specialize in providing state-of-the-art
-          online monitoring solutions for industries across the globe. Our
-          advanced technologies enable real-time data acquisition, precise
-          measurements, and comprehensive analysis, empowering businesses to
-          optimize their processes, ensure compliance, and drive operational
-          efficiency.
-        </p>
-        <div className="home__product-list">
-          <h2 className="home__product-list-title">
-            Cutting-Edge Monitoring Technologies for Every Industry
-          </h2>
-          <ul className="home__product-list-items">
-            <li className="home__product-list-item">pH Meters</li>
-            <li className="home__product-list-item">ORP Meters</li>
-            <li className="home__product-list-item">TDS Meters</li>
-            <li className="home__product-list-item">Turbidity Meters</li>
-            <li className="home__product-list-item">COD/BOD/TSS Analyzers</li>
-            <li className="home__product-list-item">Chlorine Meters</li>
-            <li className="home__product-list-item">Conductivity Meters</li>
-          </ul>
+
+      <motion.div
+        className="home__content"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInVariants}
+        transition={{ duration: 1, delay: 0.2 }}
+      >
+        <div className="home__about">
+          <img src={homeAbout} alt="img" />
+          <motion.p className="home__description">
+            At Advance Analytik, we specialize in providing state-of-the-art
+            online monitoring solutions for industries across the globe. Our
+            advanced technologies enable real-time data acquisition, precise
+            measurements, and comprehensive analysis, empowering businesses to
+            optimize their processes, ensure compliance, and drive operational
+            efficiency.
+          </motion.p>
         </div>
-        <p className="home__description">
-          These instruments are built with the latest technology and
-          industry-leading accuracy to deliver reliable and precise monitoring
-          results.
-        </p>
-        <div className="home__tailored-solutions">
-          <h2 className="home__tailored-solutions-title">
+
+        <motion.div
+          className="home__product-list"
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <motion.h2
+            className="home__product-list-title"
+            variants={fadeInVariants}
+          >
+            Cutting-Edge Monitoring Technologies for Every Industry
+          </motion.h2>
+          <div className="home__products__content__wrapper">
+            <div className="home__products__list__content__wrapper">
+              <motion.ul
+                className="home__product-list-items"
+                variants={fadeInVariants}
+              >
+                <motion.li className="home__product-list-item">
+                  pH Meters
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  ORP Meters
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  TDS Meters
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  Turbidity Meters
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  COD/BOD/TSS Analyzers
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  Chlorine Meters
+                </motion.li>
+                <motion.li className="home__product-list-item">
+                  Conductivity Meters
+                </motion.li>
+              </motion.ul>
+              <motion.p
+                className="home__products__discription"
+                variants={fadeInVariants}
+              >
+                These instruments are built with the latest technology and
+                industry-leading accuracy to deliver reliable and precise
+                monitoring results.
+              </motion.p>
+              <Link to={"/products"} className="home__products__list__link">
+                {" "}
+                View Products Range <FiArrowUpRight />{" "}
+              </Link>
+            </div>
+            <div className="home__products__img__wrapper">
+              <img src={abstractDots} alt="" className="home__products__dots__img" />
+              <img src={homeProducts} alt="" />
+              <span>(Advance Analytik Controller , Analyzer , Sensor)</span>
+            </div>
+          </div>
+        </motion.div>
+        <HomeWhyUs />
+        <motion.div
+          className="home__tailored-solutions"
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          <motion.h2
+            className="home__tailored-solutions-title"
+            variants={fadeInVariants}
+          >
             Tailored Solutions for Your Industry
-          </h2>
-          <p className="home__description">
+          </motion.h2>
+          <motion.p className="home__description" variants={fadeInVariants}>
             We understand that every industry has unique monitoring
             requirements. That's why we provide customized solutions that are
             specifically tailored to meet the challenges and demands of your
@@ -53,11 +128,23 @@ const Home = () => {
             experts will work closely with you to deliver the right monitoring
             solution that aligns with your goals and regulatory compliance
             needs.
-          </p>
-        </div>
-        <div className="home__partnering">
-          <h2 className="home__partnering-title">Partnering for Success</h2>
-          <p className="home__description">
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="home__partnering"
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          <motion.h2
+            className="home__partnering-title"
+            variants={fadeInVariants}
+          >
+            Partnering for Success
+          </motion.h2>
+          <motion.p className="home__description" variants={fadeInVariants}>
             At Advance Analytik, we believe in building strong partnerships with
             our clients. We work closely with you to understand your specific
             needs, challenges, and goals. Our team of experts provides
@@ -66,11 +153,23 @@ const Home = () => {
             assistance. We are committed to your success and strive to be your
             trusted partner in achieving excellence through advanced monitoring
             solutions.
-          </p>
-        </div>
-        <div className="home__empowering">
-          <h2 className="home__empowering-title">Empowering Your Business</h2>
-          <p className="home__description">
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="home__empowering"
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          <motion.h2
+            className="home__empowering-title"
+            variants={fadeInVariants}
+          >
+            Empowering Your Business
+          </motion.h2>
+          <motion.p className="home__description" variants={fadeInVariants}>
             By choosing Advance Analytik, you gain access to cutting-edge
             monitoring technologies that empower your business to make
             data-driven decisions, optimize processes, and drive efficiency. Our
@@ -79,20 +178,9 @@ const Home = () => {
             competitive landscape. Experience the power of our solutions and
             unlock new levels of productivity, quality, and compliance for your
             business.
-          </p>
-        </div>
-      </div>
-      <div className="home__contact">
-        <h2 className="home__contact-title">Contact Us Today</h2>
-        <p className="home__description">
-          Ready to take your monitoring capabilities to the next level? Contact
-          us today to discuss your specific requirements and discover how our
-          advanced monitoring solutions can benefit your business. Our dedicated
-          team is ready to assist you and provide the right solutions to meet
-          your needs. Experience the future of online monitoring with Advance
-          Analytik.
-        </p>
-      </div>
+          </motion.p>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

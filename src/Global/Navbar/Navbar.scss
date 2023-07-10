@@ -1,71 +1,133 @@
 .navbar {
-  background-color: #fff;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.13);
-  .wrapper {
-    position: relative;
-    padding: 0 30px;
-    margin: auto;
+  height: max-content;
+  .navbar__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .navbar__logo {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.055);
+
+
+    .navbar__header__logo {
+      height: 50px;
+      padding: 10px;
       img {
-        height: 30px;
+        height: 100%;
+        width: 100%;
       }
     }
-    .navbar__links__wrapper {
+
+    .navbar__header__language__changer__wrapper {
       display: flex;
-      list-style: none;
-      width: 50%;
-      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-radius: 10px;
+      background-color: #fff;
+      gap: 10px;
+
+      .navbar__header__language__changer {
+        img {
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .navbar__links__wrapper {
+    display: flex;
+    list-style: none;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+    li {
+      position: relative;
+      display: flex;
+      justify-content: center;
       align-items: center;
 
-      li {
-        height: 60px;
+      .navbar__link {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #000000;
         display: flex;
-        justify-content: center;
         align-items: center;
-        &:hover .markets__submenu {
-          top: 100%;
-          opacity: 1;
-          visibility: visible;
-          transition: all 0.3s ease;
+        position: relative;
+
+        .navbar__link__icon {
+          font-size: 1.2rem;
         }
-        .navbar__link {
-          text-decoration: none;
-          font-size: 1rem;
-          color: #141414;
-          font-weight: 500;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 3px;
+          background-color: red;
+          transition: width 0.2s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &.scrolled {
+          height: 10px;
+          color: red;
+          transition: 0.2s;
         }
       }
-    }
-    .markets__submenu {
-      padding: 2rem;
-      position: absolute;
-      top: 80%;
-      width: 100%;
-      left: 0;
-      background-color: #fff;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.192);
-      .markets__submenu__links__wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        .markets__submenu__link {
-          text-decoration: none;
-          color: #141414;
-          &:hover {
-            text-decoration: underline;
+
+      .markets__submenu {
+        position: absolute;
+        top: calc(100% + 5px);
+        width: max-content;
+        left: 0;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 5%;
+        padding: 20px;
+        border: 1px solid #7a7a7a34;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.192);
+
+        .markets__submenu__content {
+          width: 40%;
+        }
+
+        .markets__submenu__links__wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 10px;
+
+          .markets__submenu__link {
+            text-decoration: none;
+            color: #000000;
+
+            &:hover {
+              text-decoration: underline red;
+            }
           }
+        }
+      }
+
+      &:hover {
+        .markets__submenu {
+          opacity: 1;
+          visibility: visible;
         }
       }
     }

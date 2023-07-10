@@ -1,95 +1,32 @@
 .home {
   width: 100%;
-  height: 100vh;
-  &__header {
-    margin-bottom: 30px;
-
-    span {
-      color: #7f5af0;
-      font-weight: bold;
-    }
-  }
-
-  &__title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-
-    span {
-      color: #7f5af0;
-    }
-  }
-
-  &__subtitle {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
-  }
-
-  &__content {
-    margin-bottom: 50px;
-  }
-
-  &__description {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 20px;
-
-    span {
-      color: #7f5af0;
-      font-weight: bold;
-    }
-  }
-
-  &__product-list-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-
-  &__product-list-items {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    &-item {
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 5px;
-
-      &:before {
-        content: "• ";
-        color: #333;
-      }
-    }
-  }
-
-  &__tailored-solutions-title,
-  &__partnering-title,
-  &__empowering-title,
-  &__contact-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
   .swiper {
     width: 100%;
-    height: 100%;
-
+    height: 90vh;
     .swiper-slide {
       font-size: 18px;
       background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-
       position: relative;
       .slider-slide {
         overflow: hidden;
-
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        &.first {
+          width: 100%;
+          height: 100%;
+          video {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
         img {
           height: 100%;
           width: 100%;
@@ -102,26 +39,181 @@
         }
 
         .slider-content {
+          background: linear-gradient(
+            to right,
+            #ff0000fd,
+            #ff0000fd,
+            #ff0000fd,
+            #ff0000ee,
+            rgba(255, 0, 0, 0)
+          );
+          height: max-content;
+          width: 60%;
           z-index: 1;
           color: #fff;
           padding: 2%;
-          background-color: #d50100; /* Use the variable from _variables.scss */
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          position: absolute;
-          bottom: 0;
-          left: 5%;
-          width: 60%;
-          height: 50%;
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          flex-direction: column;
+          .slider-content__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 2%;
+            text-decoration: none;
+            &:hover .slider-content__link__icon {
+              margin-left: 5px;
+              transition: 0.1s all;
+            }
+          }
           h2 {
-            font-size: 3rem;
-            font-weight: 600;
+            font-size: 2rem;
+            font-weight: 500;
             margin-bottom: 10px;
           }
-          
+
           p {
-            font-size: 16px;
+            width: 70%;
+            font-size: 1rem;
             line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  .home__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+
+    .home__about {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 5%;
+      padding-bottom: 5%;
+      border-bottom: 1px solid rgb(75, 75, 75);
+      img {
+        height: 300px;
+        width: 50%;
+      }
+      p {
+        width: 50%;
+        font-size: 1.2rem;
+        text-align: justify;
+        font-weight: 500;
+      }
+    }
+    .home__product-list {
+      margin-top: 3%;
+      width: 90%;
+      .home__product-list-title {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      .home__products__content__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .home__products__list__content__wrapper {
+          width: 50%;
+          .home__product-list-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+            margin-top: 20px;
+            padding: 2%;
+            li {
+              font-size: 1.2rem;
+            }
+          }
+          .home__products__discription {
+            margin-top: 5%;
+            font-size: 1.2rem;
+            color: #000000;
+          }
+          .home__products__list__link {
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: max-content;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-weight: 500;
+          }
+        }
+        .home__products__img__wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: relative;
+          .home__products__dots__img {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            height: 150px;
+            z-index: -1;
+            opacity: 0.6;
+          }
+          img {
+            height: 400px;
+          }
+          span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: red;
+          }
+        }
+      }
+    }
+    .home__whyus {
+      width: 90%;
+      margin-top: 4%;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        width: 70%;
+      }
+      .home__whyus__card__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 3%;
+        gap: 5%;
+        .home__whyus__card {
+          height: 100%;
+          width: 40%;
+          padding: 1%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+          .home__whyus__card__icon {
+            font-size: 3rem;
+            color: #000000;
+          }
+          p {
+            width: 100%;
+            text-align: justify;
+          }
+          h2 {
+            color: #7e7e7e;
+            font-weight: 500;
+            margin-top: 5%;
+          }
+          h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
           }
         }
       }

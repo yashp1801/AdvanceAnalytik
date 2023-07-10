@@ -1,12 +1,77 @@
 .contact {
   padding: 6rem 4rem;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      #fff 100%
+    );
+    z-index: -1;
+  }
   .contact__header {
+    padding: 5%;
+    text-align: center;
     h1 {
       font-size: 4rem;
       font-weight: 600;
     }
     p {
       font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+  .contact__card__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .contact__card {
+      border: 1px solid rgba(122, 122, 122, 0.37);
+      border-radius: 10px;
+      background-color: #fff;
+      height: 250px;
+      width: 280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 2%;
+      .contact__card__icon {
+        padding: 10px;
+        font-size: 3rem;
+        border: 1px solid #afafaf;
+        border-radius: 10px;
+      }
+      .contact__card__content {
+        h2 {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 2rem;
+        }
+        span {
+          font-size: 1rem;
+          text-decoration: underline;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+      }
     }
   }
   .contact__details__map__wrapper {
@@ -14,6 +79,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     h2 {
       font-size: 2.2rem;
     }

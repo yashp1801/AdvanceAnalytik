@@ -1,120 +1,169 @@
-// Career.scss
-
-.career-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6rem 4rem;
-
-  .career-page__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .career-page__description {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .career-page__why-join {
-    margin-bottom: 40px;
-
-    .career-page__subtitle {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .career-page__reasons {
+.career {
+  height: 100%;
+  .careers__header {
+    background-color: #d50100;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 5%;
+    .careers__header__title {
       display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
+      align-items: flex-end;
+      width: max-content;
+      position: relative;
+      h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 250px;
+        width: 300px;
+      }
+    }
+    p {
+      width: 30%;
+      color: #fff;
+    }
+  }
+  .careers__page__sections__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .careers__section__one {
+      width: 80%;
+      margin-top: 5%;
+      text-align: center;
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      p {
+        margin: 2% 0;
+      }
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .careers__section__two {
+      width: 80%;
+      margin-top: 5%;
+      text-align: center;
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #4e4e4e;
+      }
+      .careers__section__two__jobportal__cards__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 5%;
 
-      .career-page__reason {
+        .careers__section__two__jobportal__card {
+          border: 1px solid #4e4e4e63;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+          padding: 3%;
+          margin: 1%;
+          .careers__section__two__jobportal__card__content__wrapper {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            p {
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #d50100;
+            }
+            h1 {
+              font-size: 1.6rem;
+            }
+            .careers__section__two__jobportal__card__footertags__wrapper {
+              width: 100%;
+              margin-top: 20px;
+              display: flex;
+              .careers__section__two__jobportal__card__footertag {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 20px;
+                color: #353434;
+                font-weight: 600;
+                .careers__section__two__jobportal__card__footertag__icon {
+                  font-size: 0.9rem;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+          .careers__section__two__jobportal__card__portalLink__wrapper {
+            .careers__section__two__jobportal__card__portalLink {
+              text-decoration: none;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              color: #d50100;
+              .careers__section__two__jobportal__card__portalLink__icon {
+                margin-left: 10px;
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .careers__section__three {
+      width: 80%;
+      text-align: center;
+      margin-top: 5%;
+      p {
+        margin-bottom: 5%;
+      }
+      .faq {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        max-width: 300px;
 
-        img {
-          width: 100%;
-          max-width: 200px;
-          margin-bottom: 20px;
-          border-radius: 10px;
-        }
-
-        h4 {
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-
-  .career-page__how-to-apply {
-    .career-page__subtitle {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .career-page__form {
-      margin-top: 20px;
-
-      .form-group {
-        margin-bottom: 20px;
-
-        label {
-          display: block;
-          font-size: 16px;
-          font-weight: bold;
-          margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-          width: 100%;
-          padding: 10px;
-          font-size: 14px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-
-          &:focus {
-            outline: none;
-            border-color: #ff6f00;
+        .faq__item {
+          padding: 1%;
+          width: 80%;
+          border-bottom: 1px solid #141414;
+          cursor: pointer;
+          .faq__question__icons__wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .faq__question {
+              font-size: 1.3rem;
+              font-weight: 500;
+              text-align: start;
+            }
+            .faq__question__icons__wrapper__icon {
+              font-size: 2rem;
+            }
           }
         }
-
-        textarea {
-          resize: vertical;
-          height: 100px;
-        }
-      }
-
-      .btn-primary {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #d50000c4;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: #d50100;
+        .faq__answer {
+          margin-top: 1%;
+          text-align: justify;
         }
       }
     }
