@@ -84,9 +84,9 @@
           .careers__section__two__jobportal__card__content__wrapper {
             width: 50%;
             display: flex;
-            flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+            flex-direction: column;
             p {
               font-size: 0.9rem;
               font-weight: 600;
@@ -166,6 +166,38 @@
           text-align: justify;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .careers__header {
+    flex-direction: column;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    p {
+      width: 100% !important;
+      margin-top: 5%;
+    }
+  }
+  .careers__section__two__jobportal__card {
+    .careers__section__two__jobportal__card__content__wrapper {
+      text-align: start;
+    }
+    .careers__section__two__jobportal__card__footertag {
+      flex-direction: column;
+    }
+  }
+  .careers__section__three {
+    width: 100% !important;
+    .faq__item {
+      width: 90% !important;
+    }
+    .faq__question {
+      font-size: 1rem !important;
+    }
+    .faq__answer {
+      font-size: 0.9rem !important;
     }
   }
 }

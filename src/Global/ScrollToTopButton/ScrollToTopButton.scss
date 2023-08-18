@@ -1,11 +1,10 @@
 .scroll-to-top-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 120px;
+  right: 0;
   width: 40px;
   height: 40px;
   background-color: #000000;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,12 +12,14 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 
   &.visible {
     opacity: 1;
     visibility: visible;
   }
-  .scroll-to-top-button__icon{
+  .scroll-to-top-button__icon {
     font-size: 2rem;
     color: #fff;
   }

@@ -21,22 +21,23 @@ const HeroSlider = () => {
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
+      grabCursor={true}
       autoplay={{
         delay: 7000,
         disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
       }}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
       <SwiperSlide>
-        <div className="slider-slide first">
+        <div className="slider__slide__first">
           <video src={HomeVideo} autoPlay loop muted></video>
-          <div className="slider-content">
+          <div className="slider__first__slide__content">
             <h2>Welcome to Advance Analytik</h2>
             <p>Revolutionizing Online Monitoring Solutions</p>
+            <Link to={"/about"} className="slider-content__button">
+              Get Started
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -46,16 +47,14 @@ const HeroSlider = () => {
           <div className="slider-content">
             <h2>Engineering and Consultancy</h2>
             <p>
-              We offer premium engineering and consultancy services to address
-              intricate challenges, enhance efficiency, and fulfill your
-              objectives. Our adept team provides custom innovative solutions to
-              meet your specific requirements.
+              We offer top-notch engineering & consultancy for complex
+              challenges, ensuring tailored solutions for your goals.
             </p>
             <Link
               to={"/services/analyticalinstrumentation"}
               className="slider-content__link"
             >
-              View More Information{" "}
+              More Information{" "}
               <LuArrowUpRight className="slider-content__link__icon" />
             </Link>
           </div>
@@ -67,16 +66,15 @@ const HeroSlider = () => {
           <div className="slider-content">
             <h2>Analytical Instrumentation</h2>
             <p>
-              We provide advanced analytical instrumentation solutions for
-              precise measurements across various applications. From pH meters
-              to spectrophotometers, our cutting-edge technologies support your
-              analytical requirements.
+              We offer precise analytical solutions across applications, with
+              advanced instruments like pH meters and spectrophotometers to meet
+              your needs.
             </p>
             <Link
               to={"/services/analyticalinstrumentation"}
               className="slider-content__link"
             >
-              View More Information{" "}
+              More Information{" "}
               <LuArrowUpRight className="slider-content__link__icon" />
             </Link>
           </div>
@@ -88,16 +86,15 @@ const HeroSlider = () => {
           <div className="slider-content">
             <h2>Software Development</h2>
             <p>
-              Our expert software development team crafts tailor-made solutions
-              to optimize your processes, boost efficiency, and foster growth.
-              By leveraging our industry knowledge and the latest technologies,
-              we deliver dependable and scalable software products.
+              Our skilled software team creates custom solutions to enhance
+              processes, efficiency, and growth. Leveraging industry expertise
+              and cutting-edge tech, we deliver reliable, scalable software.
             </p>
             <Link
               to={"/services/analyticalinstrumentation"}
               className="slider-content__link"
             >
-              View More Information{" "}
+              More Information{" "}
               <LuArrowUpRight className="slider-content__link__icon" />
             </Link>
           </div>
@@ -109,16 +106,15 @@ const HeroSlider = () => {
           <div className="slider-content">
             <h2>Industrial IOT Solutions</h2>
             <p>
-              Discover the realm of IoT through our diverse array of smart
-              devices and solutions. Our IoT devices offer real-time data,
-              seamless connectivity, and advanced features, empowering you to
-              optimize your operations and achieve seamless automation.
+              Explore IoT with our smart devices and solutions. Experience
+              real-time data, seamless connectivity, and advanced features for
+              optimized operations and automation.
             </p>
             <Link
               to={"/services/analyticalinstrumentation"}
               className="slider-content__link"
             >
-              View More Information{" "}
+              More Information{" "}
               <LuArrowUpRight className="slider-content__link__icon" />
             </Link>
           </div>
@@ -134,7 +130,7 @@ const HeroSlider = () => {
               accurate and reliable analysis.
             </p>
             <Link to={"/products"} className="slider-content__link">
-              View Products{" "}
+              View Products Range{" "}
               <LuArrowUpRight className="slider-content__link__icon" />
             </Link>
           </div>

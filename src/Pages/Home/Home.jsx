@@ -1,13 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./Home.scss";
 import HeroSlider from "./Components/HeroSlider";
+import HomeBlogSlider from "./Components/HomeBlogSlider";
 import homeAbout from "./images/homeAbout.jpg";
-import homeProducts from "./images/homeproducts.png";
 import { Link } from "react-router-dom";
+import sustainability from "./images/sustainability.png";
+import eandc from "./images/homeservicescard.jpg";
+import softwaredevelopmentcard from "./images/softwaredevelopmentcard.jpg";
+import companyprofile from "./images/companyprofile.png";
+import homeproductscard from "./images/homeservicesproductscard.png";
+import { BsArrowRightCircleFill, BsArrowRightShort } from "react-icons/bs";
+import { FaStarOfLife } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 import { FiArrowUpRight } from "react-icons/fi";
-import abstractDots from "./images/abstractdots.png";
-import HomeWhyUs from "./Components/HomeWhyUs";
 
 const Home = () => {
   // Animation variants
@@ -16,11 +23,25 @@ const Home = () => {
     visible: { opacity: 1 },
   };
 
-  const slideUpVariants = {
-    hidden: { y: 100 },
-    visible: { y: 0 },
+  const listItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
+  const slideUpVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animation triggers only once
+  });
   return (
     <div className="home">
       <HeroSlider />
@@ -29,157 +50,143 @@ const Home = () => {
         className="home__content"
         initial="hidden"
         animate="visible"
-        variants={fadeInVariants}
+        variants={slideUpVariants}
         transition={{ duration: 1, delay: 0.2 }}
       >
         <div className="home__about">
           <img src={homeAbout} alt="img" />
-          <motion.p className="home__description">
-            At Advance Analytik, we specialize in providing state-of-the-art
-            online monitoring solutions for industries across the globe. Our
-            advanced technologies enable real-time data acquisition, precise
-            measurements, and comprehensive analysis, empowering businesses to
-            optimize their processes, ensure compliance, and drive operational
-            efficiency.
-          </motion.p>
+          <div className="home__description">
+            <h1>Pioneering Analytical Excellence</h1>
+            <motion.p>
+              At Advance Analytik, we are passionate about empowering scientific
+              advancements through cutting-edge analytical solutions. With a
+              strong commitment to precision and performance, we offer a
+              comprehensive range of state-of-the-art analytical instruments,
+              including spectrophotometers, chromatography systems, mass
+              spectrometers, and elemental analyzers. Our instruments have
+              played a crucial role in groundbreaking research and quality
+              control across diverse industries, enabling scientists to uncover
+              critical insights and make significant contributions to their
+              respective fields. Partner with us and experience the power of
+              analytical innovation with Advance Analytik.
+            </motion.p>
+            <Link to="/about" className="home__desciption__link">
+              More about us <BsArrowRightShort />
+            </Link>
+          </div>
         </div>
 
-        <motion.div
-          className="home__product-list"
-          initial="hidden"
-          animate="visible"
-          variants={slideUpVariants}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          <motion.h2
-            className="home__product-list-title"
-            variants={fadeInVariants}
-          >
-            Cutting-Edge Monitoring Technologies for Every Industry
-          </motion.h2>
-          <div className="home__products__content__wrapper">
-            <div className="home__products__list__content__wrapper">
-              <motion.ul
-                className="home__product-list-items"
-                variants={fadeInVariants}
-              >
-                <motion.li className="home__product-list-item">
-                  pH Meters
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  ORP Meters
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  TDS Meters
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  Turbidity Meters
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  COD/BOD/TSS Analyzers
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  Chlorine Meters
-                </motion.li>
-                <motion.li className="home__product-list-item">
-                  Conductivity Meters
-                </motion.li>
-              </motion.ul>
-              <motion.p
-                className="home__products__discription"
-                variants={fadeInVariants}
-              >
-                These instruments are built with the latest technology and
-                industry-leading accuracy to deliver reliable and precise
-                monitoring results.
-              </motion.p>
-              <Link to={"/products"} className="home__products__list__link">
-                {" "}
-                View Products Range <FiArrowUpRight />{" "}
+        <div className="home__services__section">
+          <h1>Unleash Innovation with Our Spectrum of Solutions</h1>
+          <div className="home__services__card__wrapper">
+            <div className="home__services__card">
+              <img src={homeproductscard} alt="" />
+              <div className="home__services__card__content">
+                <h1>
+                  Cutting-Edge Analytical <br /> Instruments
+                </h1>
+                <p>
+                  Our arsenal of advanced instruments, from precision sensors to
+                  comprehensive analyzers, is designed to empower your
+                  analytical prowess. Seamlessly integrate technology with your
+                  vision to achieve unprecedented accuracy and insights.
+                </p>
+              </div>
+              <Link to="/about" className="home__services__btn">
+                View Products Range{" "}
+                <BsArrowRightCircleFill className="home__services__btn__icon" />
               </Link>
             </div>
-            <div className="home__products__img__wrapper">
-              <img src={abstractDots} alt="" className="home__products__dots__img" />
-              <img src={homeProducts} alt="" />
-              <span>(Advance Analytik Controller , Analyzer , Sensor)</span>
+            <div className="home__services__card">
+              <img src={eandc} alt="" />
+              <div className="home__services__card__content">
+                <h1>Engineering Marvels and Consultancy Brilliance</h1>
+                <p>
+                  Our team of seasoned experts doesn't just solve problems –
+                  they engineer solutions. From optimizing existing processes to
+                  envisioning cutting-edge setups, our consultancy services
+                  bridge the gap between challenges and innovation.
+                </p>
+              </div>
+              <Link to="/about" className="home__services__btn">
+                View Products Range{" "}
+                <BsArrowRightCircleFill className="home__services__btn__icon" />
+              </Link>
+            </div>
+            <div className="home__services__card">
+              <img src={softwaredevelopmentcard} alt="" />
+              <div className="home__services__card__content">
+                <h1>
+                  {" "}
+                  Software Solutions that <br /> Redefine Possibilities
+                </h1>
+                <p>
+                  Embrace the future with our innovative software tools.
+                  Seamlessly interface real-time data with intuitive interfaces,
+                  unlocking insights that drive your decisions and strategies.
+                </p>
+              </div>
+              <Link to="/about" className="home__services__btn">
+                View Products Range{" "}
+                <BsArrowRightCircleFill className="home__services__btn__icon" />
+              </Link>
             </div>
           </div>
-        </motion.div>
-        <HomeWhyUs />
-        <motion.div
-          className="home__tailored-solutions"
-          initial="hidden"
-          animate="visible"
-          variants={slideUpVariants}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          <motion.h2
-            className="home__tailored-solutions-title"
-            variants={fadeInVariants}
-          >
-            Tailored Solutions for Your Industry
-          </motion.h2>
-          <motion.p className="home__description" variants={fadeInVariants}>
-            We understand that every industry has unique monitoring
-            requirements. That's why we provide customized solutions that are
-            specifically tailored to meet the challenges and demands of your
-            industry. Whether you operate in the pulp and paper sector,
-            distilleries, power plants, or any other industry, our team of
-            experts will work closely with you to deliver the right monitoring
-            solution that aligns with your goals and regulatory compliance
-            needs.
-          </motion.p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="home__partnering"
-          initial="hidden"
-          animate="visible"
-          variants={slideUpVariants}
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          <motion.h2
-            className="home__partnering-title"
-            variants={fadeInVariants}
-          >
-            Partnering for Success
-          </motion.h2>
-          <motion.p className="home__description" variants={fadeInVariants}>
-            At Advance Analytik, we believe in building strong partnerships with
-            our clients. We work closely with you to understand your specific
-            needs, challenges, and goals. Our team of experts provides
-            comprehensive support, from initial consultation and product
-            selection to installation, training, and ongoing technical
-            assistance. We are committed to your success and strive to be your
-            trusted partner in achieving excellence through advanced monitoring
-            solutions.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          className="home__empowering"
-          initial="hidden"
-          animate="visible"
-          variants={slideUpVariants}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <motion.h2
-            className="home__empowering-title"
-            variants={fadeInVariants}
-          >
-            Empowering Your Business
-          </motion.h2>
-          <motion.p className="home__description" variants={fadeInVariants}>
-            By choosing Advance Analytik, you gain access to cutting-edge
-            monitoring technologies that empower your business to make
-            data-driven decisions, optimize processes, and drive efficiency. Our
-            intuitive interfaces, advanced analytics, and real-time monitoring
-            capabilities provide you with the insights needed to stay ahead in a
-            competitive landscape. Experience the power of our solutions and
-            unlock new levels of productivity, quality, and compliance for your
-            business.
-          </motion.p>
-        </motion.div>
+        <div className="home__sustainability__section">
+          <div className="home__sustainability__content__wrapper">
+            <div className="home__sustainability__content">
+              <h1>Sustaibility</h1>
+              <p>
+                At Advance Analytik, we are committed to driving sustainability
+                and environmental responsibility in everything we do. We believe
+                that businesses have a crucial role to play in preserving our
+                planet for future generations. That's why we offer sustainable
+                solutions and promote eco-friendly practices to help our clients
+                achieve their sustainability goals. Our approach to
+                sustainability encompasses green technology, resource
+                optimization, environmental compliance, and collaboration for
+                impactful change. By embracing these principles, we empower
+                businesses to make a positive impact on the planet while
+                achieving their operational goals.
+              </p>
+            </div>
+            <div className="home__sustainability__img__wrapper">
+              <motion.img
+                src={sustainability}
+                alt="sustainability"
+                variants={slideUpVariants}
+                transition={{ delay: 1 }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="home__cp__download__btn__section">
+          <Link to="/contact" className="home__cp__card">
+            <FaStarOfLife className="home__cp__card__icon" />
+            <p>
+              Reach out to us and experience the power of precision analysis.
+              Let's discuss how our solutions can elevate your goals.
+            </p>
+            <span className="home__cp__card__link">
+              Let's Connect{" "}
+              <FiArrowUpRight className="home__cp__card__link__icon" />
+            </span>
+          </Link>
+          <Link className="home__cp__card">
+            <FaStarOfLife className="home__cp__card__icon" />
+            <p>
+              Explore our world of advanced analytical solutions. Download our
+              profile to discover how we drive innovation in industries.
+            </p>
+            <a href="/" className="home__cp__card__link">
+              Download Profile{" "}
+              <FiDownload className="home__cp__card__link__icon" />
+            </a>
+          </Link>
+        </div>
+        <HomeBlogSlider />
       </motion.div>
     </div>
   );

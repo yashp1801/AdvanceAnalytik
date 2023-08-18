@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { HiOutlineDownload } from "react-icons/hi";
 import products from "./productsData";
-import { MdKeyboardArrowLeft } from "react-icons/md";
 // import MadeInHungary from "./MadeHungary.png";
 import { useLocation, useNavigate } from "react-router-dom";
+import RequestQuotePopup from "./Components/RequestQuotePopup";
 
 import "./Products.scss";
 
-const SelectedProductPopup = ({ setIsOpen }) => {
+const SelectedProductPopup = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { productId } = location.state;
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("features");
 
   const handleClick = () => {
     navigate("/products");
@@ -18,46 +21,68 @@ const SelectedProductPopup = ({ setIsOpen }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   // Find the product that matches the productId
   const selectedProduct = products.find(
     (product) => product.productId === productId
   );
+
+  if (!selectedProduct) {
+    // Handle the case when the product is not found
+    return <div>Product not found!</div>;
+  }
+
   return (
     <div className="selectedproductpopup">
       <div className="selectedproductpopup__container">
-        <div className="selectedproductpopup__container__wrapper">
-          <div className="selectedproductpopup__header">
-            <h1>{selectedProduct.name}</h1>
-            <button onClick={handleClick}>
-              {" "}
-              <MdKeyboardArrowLeft className="selectedproductpopup__header__btn__icon" />{" "}
-              Back
-            </button>
+        <div className="selectedproductpopup__header">
+          <h1> ADVANCE ANALYTIK {selectedProduct.name}</h1>
+        </div>
+        <div className="selectedproductpopup__content__wrapper">
+          <div className="selectedproductpopup__content__img__wrapper">
+            <img src={selectedProduct.img} alt="img" />
           </div>
-          <div className="selectedproductpopup__content__wrapper">
-            <div className="selectedproductpopup__content__img__wrapper">
-              <img src={selectedProduct.img} alt="img" />
-              {/* <img
-                className="selectedproductpopup__content__madeImg"
-                src={MadeInHungary}
-                alt=""
-              /> */}
-            </div>
-            <div className="selectedproductpopup__content__introduction__wrapper">
-              <h2>Introduction</h2>
-              <p>{selectedProduct.introduction}</p>
+          <div className="selectedproductpopup__content__introduction__wrapper">
+            <p>{selectedProduct.introduction}</p>
+            <div className="selectedproductpopup__content__introduction__btn__wrapper">
+              <a
+                href="/"
+                className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn"
+              >
+                Data Sheet
+              </a>
+              <a
+                onClick={() => setIsOpen(true)}
+                className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn"
+              >
+                Request a quote
+              </a>
             </div>
           </div>
-          {selectedProduct.features ? (
-            <div className="selectedproductpopup__features__wrapper">
-              <h3>Features</h3>
-              {selectedProduct?.features?.map((item, index) => {
-                return <li key={index}>{item}</li>;
-              })}
-            </div>
-          ) : null}
+        </div>
+        <div className="selectedproductpopup__tab__buttons">
+          <button
+            onClick={() => setActiveTab("features")}
+            className={activeTab === "features" ? "active" : ""}
+          >
+            Features
+          </button>
+          <button
+            onClick={() => setActiveTab("specifications")}
+            className={activeTab === "specifications" ? "active" : ""}
+          >
+            Technical Specifications
+          </button>
+        </div>
+        {activeTab === "features" && (
+          <div className="selectedproductpopup__features__wrapper">
+            {selectedProduct?.features?.map((item, index) => {
+              return <li key={index}>{item}</li>;
+            })}
+          </div>
+        )}
+        {activeTab === "specifications" && (
           <div className="selectedproductpopup__specifictions__wrapper">
-            <h4> Technical Specification</h4>
             <table>
               <tbody>
                 {selectedProduct?.attributes?.map((attribute, index) => (
@@ -69,13 +94,19 @@ const SelectedProductPopup = ({ setIsOpen }) => {
               </tbody>
             </table>
           </div>
-          {selectedProduct.subImg ? (
-            <div className="selectedproductpopup__subImg__wrapper">
-              <img src={selectedProduct.subImg} alt="diagram" />
-            </div>
-          ) : null}
-        </div>
+        )}
+        {selectedProduct.subImg && (
+          <div className="selectedproductpopup__subImg__wrapper">
+            <img src={selectedProduct.subImg} alt="diagram" />
+          </div>
+        )}
       </div>
+      {isOpen && (
+        <RequestQuotePopup
+          setIsOpen={setIsOpen}
+          selectedProduct={selectedProduct.name}
+        />
+      )}
     </div>
   );
 };

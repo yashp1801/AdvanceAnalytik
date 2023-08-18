@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { IoMdArrowDropdown } from "react-icons/io";
 import "./Navbar.scss";
 import AAlogo from "./AdvanceAnalytik.png";
 import hungaryFlag from "./hungary.png";
 import ukFlag from "./uk.jpg";
-import { Link } from "react-router-dom";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
   const [navbarBgColor, setNavbarBgColor] = useState("");
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +25,13 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleMobileMenuToggle = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${showMobileMenu ? "show-mobile-menu" : ""}`}>
       <div
         style={{
           width: "100%",
@@ -40,9 +46,21 @@ const Navbar = () => {
         <div className="navbar__header__logo">
           <img src={AAlogo} alt="" />
         </div>
-        <ul className="navbar__links__wrapper">
+        <div
+          className="navbar__mobile-menu-toggle"
+          onClick={handleMobileMenuToggle}
+        >
+          <div className="navbar__mobile-menu-toggle__bar"></div>
+          <div className="navbar__mobile-menu-toggle__bar"></div>
+          <div className="navbar__mobile-menu-toggle__bar"></div>
+        </div>
+        <ul
+          className={`navbar__links__wrapper ${
+            showMobileMenu ? "show-mobile-menu" : ""
+          }`}
+        >
           <li>
-            <Link to={"/"} className={`navbar__link ${navbarBgColor}  `}>
+            <Link to={"/"} className={`navbar__link`}>
               Home
             </Link>
           </li>
@@ -185,20 +203,10 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
+          {/* Add other menu items here */}
         </ul>
-        <div className="navbar__header__language__changer__wrapper">
-          <div className="navbar__header__language__changer">
-            <img
-              src={ukFlag}
-              alt=""
-              style={{ borderRight: "1px solid #000000", paddingRight: "10px" }}
-            />
-          </div>
-          <div className="navbar__header__language__changer">
-            <img src={hungaryFlag} alt="" />
-          </div>
-        </div>
       </div>
+      {/* Dropdown submenus */}
     </nav>
   );
 };

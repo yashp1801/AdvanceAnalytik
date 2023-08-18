@@ -1,9 +1,9 @@
 import React from "react";
 import marketData from "./marketData";
-import { useParams } from "react-router-dom";
-import BgImg from "./industry.jpg";
+import { useParams, Link } from "react-router-dom";
+import { FaStarOfLife } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
 import "./Market.scss";
-import Img from "./images/PulpandPaper.jpg";
 
 const Market = () => {
   const { marketName } = useParams();
@@ -16,22 +16,32 @@ const Market = () => {
   return (
     <div className="market">
       <div className="market__header">
-        <div className="market__header__title">
-          <h1>{market.name}</h1>
-          <h2>{market.tagline}</h2>
+        <h1>{market.name}</h1>
+      </div>
+      <div className="markets__sections__wrapper">
+        <div className="markets__section__one">
+          <p>
+            {" "}
+            <FaStarOfLife className="markets__section__one__icon" />{" "}
+            {market.des1}
+          </p>
+          <p>{market.des2}</p>
         </div>
-        <img src={BgImg} alt="" className="market__header__bgImg" />
-      </div>
-      <div className="market__des">
-        <p>{market.des1}</p>
-        <p>{market.des2}</p>
-      </div>
-      <div className="market__img__des__wrapper">
-        <img src={market.img} alt="" />
-        <p>{market.des3}</p>
-      </div>
-      <div className="market__des">
-        <p>{market.des4}</p>
+        <div className="markets__section__two">
+          <img src={market.img} alt="" />
+          <div className="markets__section__two__content__wrapper">
+            <p>{market.des3}</p>
+            <Link
+              to={"/services/analyticalinstrumentation"}
+              className="markets__section__two__content__link"
+            >
+              View Products Range <FiArrowUpRight className="markets__section__two__content__link__icon" />
+            </Link>
+          </div>
+        </div>
+        <div className="market__des">
+          <p>{market.des4}</p>
+        </div>
       </div>
     </div>
   );

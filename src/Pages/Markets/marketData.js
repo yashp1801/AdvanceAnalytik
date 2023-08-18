@@ -11,18 +11,29 @@ import hazardouswaste from "./images/hazardouswate.jpg";
 import oilrefinery from "./images/oilrefinery.jpg";
 import pesticides from "./images/pesticides.jpg";
 import pharmasuticals from "./images/pharmasuticals.jpg";
+import biomedicalwaste from "./images/biomedicalwaste.jpg";
+
 
 const marketData = [
   {
     route: "pulpandpaper",
     name: "Pulp & Paper",
     tagline:
-      "Advanced Monitoring Solutions for Enhanced Efficiency and Quality",
+      "Welcome to Advance Analytik's pulp and paper industry solutions. With our advanced analytical instruments and expertise, we help businesses achieve sustainable production, enhance efficiency, and ensure top-notch product quality. From raw material analysis to process optimization, our innovative solutions empower data-driven decision-making for success in the competitive pulp and paper market. Explore our offerings and unlock new possibilities today.",
     des1: "Are you in the Pulp and Paper industry? Looking for advanced monitoring solutions to optimize your production processes, improve product quality, and ensure compliance with environmental regulations? Look no further. At Advance Analytik, we specialize in providing cutting-edge monitoring technologies designed specifically for the unique needs of the Pulp and Paper market.",
     des2: "Efficiency and quality are paramount in the highly competitive Pulp and Paper industry. That's why we offer a comprehensive range of state-of-the-art monitoring solutions that enable you to stay ahead of the curve. Our advanced pH meters, ORP meters, TDS meters, turbidity meters, COD/BOD/TSS analyzers, chlorine meters, and conductivity meters are engineered to deliver accurate and reliable measurements, empowering you to make informed decisions and optimize your operations.By implementing our monitoring solutions, you can streamline your production processes, enhance product quality, and maximize resource utilization. Our technologies enable you to monitor critical parameters such as pH levels, oxidation-reduction potential (ORP), total dissolved solids (TDS), turbidity, chemical oxygen demand (COD), biochemical oxygen demand (BOD), total suspended solids (TSS), chlorine levels, and conductivity. This comprehensive monitoring ensures that your production stays on track, meets the required standards, and minimizes environmental impact.",
     des3: "At Advance Analytik, we understand the importance of compliance with environmental regulations in the Pulp and Paper industry. Our monitoring solutions help you maintain water quality, optimize chemical dosing, and ensure efficient wastewater treatment. By doing so, you can not only meet regulatory requirements but also contribute to sustainability efforts, fostering a positive reputation for your business.Partner with us to benefit from our extensive industry experience and expertise. We take pride in delivering customized monitoring solutions that address your specific challenges and goals. With our advanced technologies and dedicated support, you can achieve greater operational efficiency, reduce costs, and enhance overall productivity.",
     des4: "Don't settle for outdated monitoring practices. Stay ahead of the competition and unlock the full potential of your Pulp and Paper operations with our advanced monitoring solutions. Contact us today to learn more about how Advance Analytik can empower your business in the Pulp and Paper market.",
     img: PulpandPaper,
+    card1__title: "Advanced Monitoring Solutions",
+    card1__des:
+      "Our state-of-the-art monitoring solutions are specifically designed to meet the unique needs of the pulp and paper industry. With accurate and real-time measurements of critical parameters like pH, turbidity, and chemical composition, our advanced instruments enable businesses to optimize their processes, enhance product quality, and ensure compliance with industry regulations.",
+    card2__title: "Industry Expertise ",
+    card2__des:
+      "With years of experience serving the pulp and paper market, we have developed deep expertise and understanding of the industry's challenges and requirements. Our team of experts is well-versed in pulp and paper manufacturing processes, enabling us to provide tailored solutions and expert guidance to our clients. We understand the intricacies of the industry and can offer valuable insights to optimize operations.",
+    card3__title: "Reliable Performance and Support",
+    card3__des:
+      " At Advance Analytik, we prioritize the reliability and performance of our monitoring solutions. Our instruments are built to deliver consistent and dependable results, ensuring accurate data for informed decision-making. Additionally, we provide dedicated customer support, including installation assistance, calibration services, and ongoing technical support, to ensure our clients' success and satisfaction.",
   },
   {
     route: "distillery",
@@ -146,7 +157,7 @@ const marketData = [
     des2: "Common biomedical waste includes various types of waste generated in healthcare facilities, such as hospitals, clinics, laboratories, and research centers. The proper management and disposal of biomedical waste are crucial to prevent the spread of infections, protect healthcare workers and the public, and minimize environmental impact.",
     des3: "At Advance Analytik, we understand the importance of effective monitoring in handling common biomedical waste. Our advanced monitoring solutions, including pH meters, ORP meters, TDS meters, turbidity meters, and COD/BOD/TSS analyzers, offer accurate and reliable measurements to assess the quality and safety of biomedical waste. By closely monitoring critical parameters such as pH levels, chemical concentrations, and the presence of organic matter, healthcare facilities can ensure compliance with regulatory guidelines and implement appropriate waste management protocols.",
     des4: "Partner with Advance Analytik and experience the difference our advanced monitoring solutions can make in your common biomedical waste management. Ensure safe handling, proper disposal, and environmental protection. Contact us today to learn more about how we can empower your healthcare facility.",
-    img: PulpandPaper,
+    img: biomedicalwaste,
   },
   {
     route: "commonhazardouswasteincinerator",

@@ -1,0 +1,53 @@
+.legalpages {
+  .legalpages__header {
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    h1 {
+      padding: 1% 10%;
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: end;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 4rem;
+      z-index: 4;
+      color: #fff;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.842) 5%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+  .legalpages__container {
+    padding: 5% 10%;
+    h2 {
+      margin: 5% 0 1% 0;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid #00000042;
+      color: #d50100;
+      font-weight: 600;
+    }
+    p {
+      width: 90%;
+    }
+  }
+}
