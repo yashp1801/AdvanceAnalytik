@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 import "./Navbar.scss";
 import AAlogo from "./AdvanceAnalytik.png";
-import hungaryFlag from "./hungary.png";
-import ukFlag from "./uk.jpg";
+import Sidebar from "../Sidebar/Sidebar";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [navbarBgColor, setNavbarBgColor] = useState("");
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +26,32 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const animationVariants = {
+    hidden: {
+      opacity: 0,
+      y: -100, // Start from above the screen
+    },
+    visible: {
+      opacity: 1,
+      y: 0, // End at the original postion 
+      transition: {
+        delay: 1,
+        duration: 0.5, // Duration of the animation
+      },
+    },
+  };
 
   const handleMobileMenuToggle = () => {
-    setShowMobileMenu(!showMobileMenu);
+    setShowSidebar(!showSidebar);
   };
 
   return (
-    <nav className={`navbar ${showMobileMenu ? "show-mobile-menu" : ""}`}>
+    <motion.nav
+      initial="hidden"
+      animate="visible"
+      variants={animationVariants}
+      className={`navbar ${showMobileMenu ? "show-mobile-menu" : ""}`}
+    >
       <div
         style={{
           width: "100%",
@@ -43,9 +63,9 @@ const Navbar = () => {
         <div style={{ backgroundColor: "#008000", height: "33.33%" }}></div>
       </div>
       <div className="navbar__header">
-        <div className="navbar__header__logo">
-          <img src={AAlogo} alt="" />
-        </div>
+        <Link to={"/"} className="navbar__header__logo">
+          <img src={AAlogo} alt="Advance analytik logo" />
+        </Link>
         <div
           className="navbar__mobile-menu-toggle"
           onClick={handleMobileMenuToggle}
@@ -70,9 +90,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className={`navbar__link   `}>
-              Products <IoMdArrowDropdown className="navbar__link__icon" />{" "}
-            </Link>
+            <Link className={`navbar__link   `}>Products</Link>
             <div className="markets__submenu">
               <div className="markets__submenu__links__wrapper">
                 <Link
@@ -103,9 +121,7 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <Link className={`navbar__link   `}>
-              Market <IoMdArrowDropdown className="navbar__link__icon" />{" "}
-            </Link>
+            <Link className={`navbar__link`}>Market</Link>
             <div className="markets__submenu">
               <div className="markets__submenu__links__wrapper">
                 <Link
@@ -160,7 +176,7 @@ const Navbar = () => {
                   className="markets__submenu__link"
                   to={"/market/cetp&stps"}
                 >
-                  cetp&stps
+                  CETP&STPS
                 </Link>
                 <Link
                   className="markets__submenu__link"
@@ -189,9 +205,7 @@ const Navbar = () => {
               </div>
             </div>
           </li>
-          <li>
-            <Link className={`navbar__link   `}>Blog</Link>
-          </li>
+
           <li>
             <Link to={"/careers"} className={`navbar__link   `}>
               Careers
@@ -206,8 +220,8 @@ const Navbar = () => {
           {/* Add other menu items here */}
         </ul>
       </div>
-      {/* Dropdown submenus */}
-    </nav>
+      {showSidebar && <Sidebar setShowSidebar={setShowSidebar} />}
+    </motion.nav>
   );
 };
 

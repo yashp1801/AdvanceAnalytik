@@ -4,6 +4,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import { LuArrowUpRight } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import Img1 from "../images/engineering.jpg";
+import posterImg from "../images/videoPosterImg.png";
 import Img2 from "../images/analyticalInstrumentationImg.jpg";
 import Img3 from "../images/softwaredevelopment.jpg";
 import Img4 from "../images/iot.jpg";
@@ -31,7 +32,15 @@ const HeroSlider = () => {
     >
       <SwiperSlide>
         <div className="slider__slide__first">
-          <video src={HomeVideo} autoPlay loop muted></video>
+          <video
+            src={HomeVideo}
+            autoPlay
+            loop
+            muted
+            preload="auto"
+            poster={posterImg}
+          ></video>
+
           <div className="slider__first__slide__content">
             <h2>Welcome to Advance Analytik</h2>
             <p>Revolutionizing Online Monitoring Solutions</p>

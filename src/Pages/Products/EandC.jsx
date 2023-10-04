@@ -1,5 +1,5 @@
-// EandCPage.js
-import React from "react";
+
+import { useEffect } from "react";
 import "./EandC.scss";
 import eandcHeaderImg from "./productImages/eandc.jpg";
 import img1 from "./productImages/greenfield.jpg";
@@ -8,6 +8,10 @@ import img3 from "./productImages/environment.jpg";
 import img4 from "./productImages/sampleHandling.jpg";
 
 const EandC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="eandc-page">
       <div className="career-page-header">

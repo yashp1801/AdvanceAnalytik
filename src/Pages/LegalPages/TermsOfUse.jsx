@@ -1,9 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import headerImg from "./headerImg.jpg";
 import "./PrivacyPolicy.scss";
 import { GoDotFill } from "react-icons/go";
 
 const TermsOfUse = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="legalpages">
       <div className="legalpages__header">
@@ -12,14 +16,14 @@ const TermsOfUse = () => {
       </div>
       <div className="legalpages__container">
         <p>
-          Last updated: 20-08-2023 <br />  Please read these Terms of Use ("Terms")
-          carefully before using www.advanceanalytik.com operated by Advance
-          Analytik we. <br /> Your access to and use of the Site is conditioned
-          on your acceptance of and compliance with these Terms. These Terms
-          apply to all visitors, users, and others who access or use the Site.{" "}
-          <br /> By accessing or using the Site, you agree to be bound by these
-          Terms. If you disagree with any part of the Terms, then you may not
-          access the Site.
+          Last updated: 20-08-2023 <br /> Please read these Terms of Use
+          ("Terms") carefully before using www.advanceanalytik.com operated by
+          Advance Analytik we. <br /> Your access to and use of the Site is
+          conditioned on your acceptance of and compliance with these Terms.
+          These Terms apply to all visitors, users, and others who access or use
+          the Site. <br /> By accessing or using the Site, you agree to be bound
+          by these Terms. If you disagree with any part of the Terms, then you
+          may not access the Site.
         </p>
         <h2>
           {" "}

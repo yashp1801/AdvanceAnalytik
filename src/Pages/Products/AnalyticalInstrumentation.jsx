@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "./AnalyticalInstrumentation.scss";
 import { Link } from "react-router-dom";
 import analyticalInstrumentataionImg from "./productImages/analyticalInstrumentataion.jpg";
@@ -7,8 +7,14 @@ import img1 from "./productImages/analyzers.png";
 import { FiArrowUpRight } from "react-icons/fi";
 import img2 from "./productImages/controllers.png";
 import img3 from "./productImages/sensors.png";
+import { BsArrowRightCircleFill } from "react-icons/bs";
+import { BiMouse } from "react-icons/bi";
 
 const AnalyticalInstrumentation = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="analyticalInstrumentation">
       <div className="analyticalInstrumentation__header">
@@ -23,6 +29,9 @@ const AnalyticalInstrumentation = () => {
             demands of modern analysis, enabling businesses to gain valuable
             insights, drive innovation, and ensure quality control.
           </p>
+          <span>
+            Scroll down <BiMouse className="analyticalInstrumentation__header__content__icon" />{" "}
+          </span>
         </div>
         <div className="analyticalInstrumentation__header__img__wrapper">
           <img src={analyticalInstrumentataionImg} alt="" />
@@ -64,13 +73,10 @@ const AnalyticalInstrumentation = () => {
                 liquid properties, our analyzers offer a window into the heart
                 of your samples.
               </p>
-              <Link
-                to={"/products"}
-                className="analyticalInstrumentation__content__card__content__link"
-              >
+              <span className="analyticalInstrumentation__content__card__content__link">
                 View Range{" "}
-                <FiArrowUpRight className="analyticalInstrumentation__content__card__content__link__icon" />{" "}
-              </Link>
+                <BsArrowRightCircleFill className="analyticalInstrumentation__content__card__content__link__icon" />
+              </span>
             </div>
           </Link>
           <Link
@@ -95,16 +101,10 @@ const AnalyticalInstrumentation = () => {
                 pH, and more. With our controllers, you're in command of your
                 analytical journey.
               </p>
-              <Link
-                to={{
-                  pathname: "/products",
-                  state: { activeTab: "Controllers" }, // Pass the selected product category as state
-                }}
-                className="analyticalInstrumentation__content__card__content__link"
-              >
+              <span className="analyticalInstrumentation__content__card__content__link">
                 View Range{" "}
-                <FiArrowUpRight className="analyticalInstrumentation__content__card__content__link__icon" />{" "}
-              </Link>
+                <BsArrowRightCircleFill className="analyticalInstrumentation__content__card__content__link__icon" />
+              </span>
             </div>
           </Link>
           <Link
@@ -128,13 +128,10 @@ const AnalyticalInstrumentation = () => {
                 industries, including water treatment, food production, and
                 pharmaceuticals.
               </p>
-              <Link
-                to={"/products"}
-                className="analyticalInstrumentation__content__card__content__link"
-              >
+              <span className="analyticalInstrumentation__content__card__content__link">
                 View Range{" "}
-                <FiArrowUpRight className="analyticalInstrumentation__content__card__content__link__icon" />{" "}
-              </Link>
+                <BsArrowRightCircleFill className="analyticalInstrumentation__content__card__content__link__icon" />
+              </span>
             </div>
           </Link>
         </div>

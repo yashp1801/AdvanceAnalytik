@@ -1,6 +1,6 @@
 // IoTDevicesPage.jsx
 
-import React from "react";
+import {useEffect} from "react";
 import "./IotDevicesPage.scss";
 import iotImg from "./productImages/iot.jpg";
 

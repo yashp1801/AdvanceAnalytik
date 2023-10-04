@@ -7,18 +7,39 @@ import img08 from "./productImages/img008.jpg";
 import img09 from "./productImages/img009.png";
 import img10 from "./productImages/img010.png";
 import img11 from "./productImages/img011.png";
-import img12 from "./productImages/img012.png";
-import img13 from "./productImages/img013.png";
 import img14 from "./productImages/img014.png";
 import img15 from "./productImages/img015.png";
 import img16 from "./productImages/img016.png";
-import img17 from "./productImages/img017.png";
 import img18 from "./productImages/img018.png";
 import img19 from "./productImages/img019.png";
 import img20 from "./productImages/img020.png";
-import subImg005 from "./productImages/subImg005.png";
-import subImg009 from "./productImages/subImg009.png";
+import img26 from "./productImages/img026.png";
+import analyzerTableImg from "./productImages/analyzerTableImg.png";
 
+import product001 from "./productsDataSheets/product001.pdf";
+import product002 from "./productsDataSheets/product002.pdf";
+import product003 from "./productsDataSheets/product003.pdf";
+import product004 from "./productsDataSheets/product004.pdf";
+import product005 from "./productsDataSheets/product005.pdf";
+import product006 from "./productsDataSheets/product006.pdf";
+import product007 from "./productsDataSheets/product007.pdf";
+import product008 from "./productsDataSheets/product008.pdf";
+import product009 from "./productsDataSheets/product009.pdf";
+import product010 from "./productsDataSheets/product010.pdf";
+import product011 from "./productsDataSheets/product011.pdf";
+import product012 from "./productsDataSheets/product012.pdf";
+import product013 from "./productsDataSheets/product013.pdf";
+import product014 from "./productsDataSheets/product014.pdf";
+import product015 from "./productsDataSheets/product015.pdf";
+import product016 from "./productsDataSheets/product016.pdf";
+import product017 from "./productsDataSheets/product017.pdf";
+import product018 from "./productsDataSheets/product018.pdf";
+import product019 from "./productsDataSheets/product019.pdf";
+import product020 from "./productsDataSheets/product020.pdf";
+import product021 from "./productsDataSheets/product021.pdf";
+import product022 from "./productsDataSheets/product022.pdf";
+import product023 from "./productsDataSheets/product023.pdf";
+import subImg023 from "./productImages/optics100parameterdatatable.png";
 
 const products = [
   {
@@ -26,6 +47,7 @@ const products = [
     name: "AADXC-200 / AADXC-400  ",
     category: "Controllers",
     img: img01,
+    dataSheetLink: product001,
     introduction:
       "Advance Analytics AADXC Series Single/Dual- channel transmitter, measured parameters include PH, DO, ORP, conductivity, turbidity, SS, chlorophyll, blue-green algae and other parameters. And realize the plug and play of the sensor, the configuration is flexible and convenient.",
     features: [
@@ -40,7 +62,7 @@ const products = [
     ],
     attributes: [
       { name: "Model", value: "AADXC-200 / AADXC-400" },
-      
+
       { name: "Part Number", value: "AADXC-200 (SINGLE) AADXC-400  (DUAL)" },
       {
         name: "Display",
@@ -86,6 +108,7 @@ const products = [
     productId: "002",
     name: "AAP-C1000-700",
     category: "Controllers",
+    dataSheetLink: product002,
     img: img02,
     introduction:
       "AAP-C1000-700 Multi-parameter transmitter cansimultaneously monitor multiple different parameters according to customers’ different needs, including Temperature / PH / ORP  / Conductivity/ Dissolved oxygen/Turbidity /Sludge   concentration/Chlorophyll/ Blue-green algae / COD / NO3 /  Ionic ammonia nitrogen / Transparency / Residual chlorine and other parameters. It is widely used in water quality monitoring in wastewater treatment plants, waterworks, water stations, surface water, and industrial fields  The transmitter software interface parameter display i adaptive, the operation interface menu is simple to set up, the   user operation is convenient; the sensor is plug and play; the  electrode installation and replacement is fast and convenient;  various data transmission modes are optional, and the data  storage and export are available.",
@@ -123,8 +146,9 @@ const products = [
   },
   {
     productId: "003",
-    name: "PPH-500 pH Sensor",
+    name: "PPH-500",
     category: "Sensors",
+    dataSheetLink: product003,
     introduction:
       "The pH Sensor is widely used in pH monitoring in water treatment, hydrological monitoring, wastewater treatment, swimming pools, fish ponds and fertilizers, chemicals, and biology.It uses a composite electrode in which a glass indicating electrode and a reference electrode are combined to measure the pH of the water.",
     img: img03,
@@ -163,8 +187,9 @@ const products = [
   },
   {
     productId: "004",
-    name: "POP-500 ORP Sensor",
+    name: "POP-500 ",
     category: "Sensors",
+    dataSheetLink: product004,
     introduction:
       "The ORP sensor is a combination electrode combined precious metals indicator electrode with reference electrode. Firstly measure the potential difference of working battery made up of measuring electrode and reference electrode in the solution,then use linear relation of ORP value of the measuring solution and potential of working battery to realize the ORP on-line monitoring.",
     img: img04,
@@ -207,8 +232,9 @@ const products = [
   },
   {
     productId: "005",
-    name: "PEC-500 Conductivity Sensor",
+    name: "PEC-500 ",
     category: "Sensors",
+    dataSheetLink: product005,
     img: img05,
     introduction:
       "The conductivity sensor is a glass platinum electrode. In general, the voltage is in the form of a sine wave. Conductivity is determined by the ohmic formula based on voltage and current values. It is widely used in the monitoring of conductivity in water treatment, hydrological monitoring, wastewater treatment, swimming pools, fish ponds and fertilizers, chemicals, and biology.",
@@ -235,8 +261,9 @@ const products = [
   },
   {
     productId: "006",
-    name: "PPH-500A Digital pH sensor",
+    name: "PPH-500A ",
     category: "Sensors",
+    dataSheetLink: product006,
     introduction:
       "Introducing our pH Sensor, a durable and precise solution for measuring pH levels. Made with high-quality materials such as PPS shell and a glass core electrode, it ensures accurate readings within a wide range of 0-14 pH. With a resolution of 0.01 pH and an accuracy of ±0.1 pH, it delivers reliable results. The sensor also includes temperature sensing capabilities with a range of -10 to 110°C and a resolution of 0.1°C. Its compact design, 12V DC power supply, and IP68 water protection make it suitable for various applications. The standard cable length is 10m, extendable up to 200m. Trust our pH Sensor for precise pH measurements in diverse environments.",
     application:
@@ -278,8 +305,9 @@ const products = [
   },
   {
     productId: "007",
-    name: "PPH-500D pH Sensor",
+    name: "PPH-500D",
     category: "Sensors",
+    dataSheetLink: product007,
     introduction:
       "Introducing our pH Sensor, built with a durable POM shell, designed to withstand demanding environments. It offers a wide measuring range of 0-14 pH, ensuring accurate pH readings. With a temperature range of 0-80°C and a pressure range of ≤0.6Mpa, it is suitable for a variety of applications. The sensor features a PT1000 temperature sensor for precise temperature measurements. It has a high slope of ≥95% and a rapid response time of ≤30 seconds, ensuring reliable and timely results. With an IP68/NEMA6P protection class and upper and lower R3/4 pipe thread mounting options, it is well-equipped to handle challenging conditions. The standard cable length is 10 meters, extendable up to 50 meters, providing flexibility in installation. Trust our pH Sensor for accurate and durable pH measurements in diverse industrial and laboratory settings.",
     principle:
@@ -300,12 +328,12 @@ const products = [
       { name: "Mounting thread", value: "Upper and lower R3/4 pipe thread" },
       { name: "Cable length", value: "Standard: 10M, Max. extended to 50M" },
     ],
-    subImg: subImg005,
   },
   {
     productId: "008",
     name: "PEC-500A ",
     category: "Sensors",
+    dataSheetLink: product008,
     introduction:
       "Introducing our PPS Shell Conductivity Sensor: precise, reliable, and versatile. It covers a wide measurement range with automatic range switching. With an accuracy of ±2%F.S. and temperature compensation up to 60℃, it delivers accurate results in varying conditions. The sensor is compact, IP68 rated, and supports MODBUS RS485 communication. Installation is easy with its 3/4 mounting thread, and it comes with a standard 10-meter cable.",
     principleManagnment:
@@ -350,13 +378,12 @@ const products = [
         value: "Standard: 10M, the maximum can be extended 200m",
       },
     ],
-
-    subImg: subImg005,
   },
   {
     productId: "009",
     name: "AAPDO-700",
     category: "Sensors",
+    dataSheetLink: product009,
     introduction:
       "AAPDO-700 Optical Dissolved Oxygen sensor adopts fluorescence method to measure dissolved oxygen. The cap of the sensor is coated with a luminescent material.Blue light from an LED illuminates the luminescent chemical. The luminescent chemical instantly becomes excited and releases red light. The time and intensity of red light are inversely proportional to the concentration of oxygen molecules. So the concentration of oxygen molecules is calculated. ",
     img: img09,
@@ -422,13 +449,12 @@ const products = [
         value: "0-45 ℃（Non-freezing） ",
       },
     ],
-
-    subImg: subImg009,
   },
   {
     productId: "010",
     name: "AAP-RCL-4000S ",
-    category: "Analyzer",
+    dataSheetLink: product010,
+    category: "Sensors",
     introduction:
       "  AAP-RCL-4000S residual chlorine/chlorine dioxide adopts advanced principle of constant voltage to measure residual chlorine/chlorine dioxide in water. The principle is adding a stable electric potential between polarized electrode and  reference electrode to make different measured components produce different current intensity. The analyzer calculates the concentration of the measured component by collecting and analyzing current signal. AAP-RCL-4000S residual chlorine/chlorine dioxide has simple structure, easy to clean and replace. Meanwhile, the  electrode need not to replace membrane and reagent when operating and the maintenance is simple to ensure the stability, reliability and accuracy of instrument for long-term working. ",
     img: img10,
@@ -483,6 +509,7 @@ const products = [
     productId: "011",
     name: "AADCOD ",
     category: "Sensors",
+    dataSheetLink: product011,
     introduction:
       "  AADCOD series COD/BOD/TSS/TOC sensor is a new generation of environmental protection type sensor launched by our company, which is reagent free, pollution-free, more economic and environmental protection. Small size, more convenient installation, online continuous water quality monitoring. Automatic compensation for turbidity interference, with automatic  cleaning device, even long-term monitoring still has excellent stability.  Many organic substances dissolved in water absorb UV-Visible spectrum. Therefore, the  total amount of organic pollutants in water can be measured by measuring the absorption  of these organic substances by UV-Visible spectrum within the wavelength of 200 nm to 800nm, which can automatically compensate the optical path attenuation and turbidity effects, thus achieving more stable and reliable measurement values ",
     img: img11,
@@ -531,104 +558,13 @@ const products = [
       { name: "Probe warranty", value: "1 year" },
     ],
   },
+
   {
     productId: "012",
-    name: "AAP-PC-800 ",
-    img: img12,
-    category: "Controllers",
-    introduction:
-      "AAP-PC-800 when used with portable electrodes, the PMI800  portable analyzer can measure a variety of parameters such  as pH, ORP, Conductivity (convertible Salinity & TDS),   Dissolved oxygen, Turbidity, Suspended solids, Chlorophyll,   Blue-green algae etc. The connected electrode type can be   automatically identified; single channel and dual channel  configurations are available. It has the advantages of comfortable operation, convenient testing and wide application. ",
-    features: [
-      "Protection Rating: IP67",
-      "Display: 3.5-inch Color Screen",
-      "Interface: Beautiful Menu Design, Easy to Operate",
-      "Ergonomic Design: Curved Shape for Comfortable Hand Grip",
-      "Non-Slip Grip: Rubber Hand Strap for Secure Handling in Wet Environments",
-      "Data Storage Function: 8GB Storage Space",
-      "Data Export: Data can be Exported through USB Interface",
-      "Built-in Rechargeable Battery: Convenient USB Charging without Battery Disassembly",
-      "Automatic Sensor Recognition: Identifies Connected Sensor Type Automatically",
-      "Adaptive Reading Interface: Reading Interface Automatically Adjusts based on Connected Sensor",
-      "Sensor Parameterization: Ability to Set Sensor Parameters",
-      "Sensor Calibration: Capability to Calibrate the Sensor",
-    ],
-    attributes: [
-      { name: "Power Supply", value: "12VDC" },
-      { name: "Protection Level", value: "IP68" },
-      { name: "Protection Class", value: "IP67" },
-      { name: "Battery Capacity", value: "8G data storage space" },
-      { name: "Power Dissipation", value: "3W" },
-      { name: "Storage Temperature", value: "-15~60 ℃" },
-      { name: "Operating Temperature", value: "0~50 ℃" },
-      { name: "Measuring Temperature", value: "0~45 ℃" },
-      { name: "Communication Protocol", value: "MODBUS RS485" },
-      {
-        name: "Maximum Withstand Pressure Depth",
-        value: "30m (With ion selective electrode: 10m)",
-      },
-      {
-        name: "Display Screen",
-        value: "3.5-inch color display screen with adjustable backlight",
-      },
-      {
-        name: "Built-in Battery",
-        value: "Battery specifications: 4 x 3.7V rechargeable lithium battery",
-      },
-    ],
-  },
-  {
-    productId: "013",
-    name: "AAD-IC-100-4  ",
-    img: img13,
-    category: "Controllers",
-    introduction:
-      "AAD-IC-100-4 The online general-purpose   transmitter is independently developed by our  company. It is industrial-grade standard design,     stable and reliable, easy to operate, and can support   all digital sensors. One channel of 4 ~ 20mA output,  photoelectric isolation, strong anti-interference   ability, one channel of RS485 output, convenient for  users to network, one channel of relay output with  isolation, users can set the upper and lower limits, so  as to control the on and off state of the equipment.",
-    features: [
-      "Automatic Identification: Supports All-Digital Sensors",
-      "Plug and Play: Easy Sensor Installation",
-      "One-Way 4-20mA Output: Analog Signal Transmission",
-      "One-Way RS485 Digital Output: Digital Signal Transmission",
-      "Relay Control: User-Set Upper and Lower Limits",
-      "Industrial Grade Standard: Ensures Robust Performance",
-      "Output Isolation: Enhances Signal Integrity",
-      "Strong Anti-Interference Ability: Reliable Measurements in Noisy Environments",
-    ],
-    attributes: [
-      { name: "Part Number", value: "AAD-IC100.400.4" },
-      {
-        name: "Sensor Type",
-        value:
-          "Supports digital sensors such as optical dissolved oxygen, Four electrode conductivity, Fiber turbidity, chlorophyll, blue-green algae, oil in water sensor, and sludge concentration sensor, pH, and ORP",
-      },
-      { name: "Power Supply", value: "110~220V" },
-      { name: "Controller Size", value: "192*64 LCD" },
-      { name: "Protection Level", value: "ABS housing, IP65" },
-      { name: "Temperature Range", value: "0~55°C, avoid direct sunlight" },
-      {
-        name: "Installation Method",
-        value: "Wall or panel mounting (opening size 138*138*)",
-      },
-      {
-        name: "Transmitting Output",
-        value:
-          "1 channel isolated 4~20mA output, 1 channel digital output, 1 channel low point relay output",
-      },
-      { name: "Storage Temperature", value: "-40 ~ 85°C" },
-      { name: "Environment Humidity", value: "≤ 80%" },
-      {
-        name: "Temperature / Pressure Compensation",
-        value: "Built-in instrument, automatic compensation 50~115KPa",
-      },
-      { name: "Operating Temperature", value: "0~50°C" },
-      { name: "Air Pressure Compensation", value: "Automatic" },
-      { name: "Weight", value: "0.8kg" },
-    ],
-  },
-  {
-    productId: "014",
     name: " AAP-DO100",
     img: img09,
     category: "Sensors",
+    dataSheetLink: product012,
     introduction:
       "AAP-DO100 is a cutting-edge dissolved oxygen sensor designed for precise and reliable measurements in various environments. It features a new oxygen-sensitive membrane with NTC temperature compensation, ensuring excellent repeatability and stability. With breakthrough fluorescence technology, it eliminates the need for membranes and electrolytes, resulting in minimal maintenance requirements. The sensor comes with a built-in self-diagnosis function for data accuracy assurance and offers plug-and-play installation for quick setup. Its factory calibration ensures no calibration is needed for a year, and it can be field-calibrated as well. The AAP-DO100 boasts a digital sensor with high anti-jamming capacity and far transmission distance, allowing seamless integration and networking without a controller.",
     features: [
@@ -683,10 +619,11 @@ const products = [
     ],
   },
   {
-    productId: "015",
+    productId: "013",
     name: " AAP-ODO200",
     img: img09,
     category: "Sensors",
+    dataSheetLink: product013,
     introduction:
       "AAP-ODO200 is an advanced dissolved oxygen sensor designed to deliver precise and reliable measurements in diverse environments. With its durable construction featuring SUS316L and Titanium alloy, it is suitable for both fresh water and marine applications. The sensor offers high resolution and repeatability, ensuring accurate results for dissolved oxygen levels and temperature. Its broad measurement range of 0-20 mg/L or 0-200% saturation and automated calibration capabilities make it versatile for various industries. With support for MODBUS RS485 communication protocol and three-way relays, the AAP-ODO200 ensures seamless integration and control in complex systems. Its dependable performance and automated calibration simplify operation and maintenance for a hassle-free experience.",
     features: [
@@ -731,11 +668,12 @@ const products = [
     ],
   },
   {
-    productId: "016",
+    productId: "014",
     name: "AAPSS-800S    ",
     category: "Sensors",
     img: img14,
     category: "Sensors",
+    dataSheetLink: product014,
     introduction:
       "The AAPTSS-800 is a highly capable sensor designed for precise and reliable measurements in various environments. With its advanced technology and durable construction, it offers a broad measurement range and high accuracy. The sensor's plug-and-play installation and versatile communication protocol make it easy to integrate with other equipment. With excellent repeatability and a self-diagnosis function, the AAPTSS-800 ensures data accuracy and reliability. Its compact size and robust design, along with optional automatic cleaning, reduce maintenance efforts. Whether in fresh water or marine applications, the AAPTSS-800 excels at delivering accurate and consistent results for a wide range of measurement requirements.",
     features: [
@@ -788,9 +726,10 @@ const products = [
     ],
   },
   {
-    productId: "017",
+    productId: "015",
     name: " AAPTurb-800S  ",
     category: "Sensors",
+    dataSheetLink: product015,
     introduction:
       "The AAPTurb-800S is a highly capable turbidity sensor known for its accurate and stable measurements. Equipped with advanced infrared scattered light technology, it offers excellent repeatability and reliability. With a built-in self-diagnosis function and optional automatic cleaning, it ensures data accuracy while reducing maintenance efforts. The sensor's digital technology provides high anti-jamming capacity and enables seamless integration with other equipment. The AAPTurb-800S is a user-friendly solution with plug-and-play installation, making it suitable for a wide range of applications in different industries.",
     img: img14,
@@ -852,10 +791,11 @@ const products = [
     ],
   },
   {
-    productId: "018",
+    productId: "016",
     name: "AAPTUL-7000",
-    category: "Analyzer",
+    category: "Sensors",
     img: img15,
+    dataSheetLink: product016,
     introduction:
       "The AAPTUL-7000 is a robust and reliable turbidity sensor, designed to deliver accurate and stable measurements within a range of 0.01 to 100 NTU. With its durable construction and plug-and-play installation, it offers user-friendly operation and easy maintenance. Ideal for environmental monitoring and water treatment applications, this sensor ensures precise data for critical processes. Its high accuracy and stability make it a valuable tool for industries seeking consistent and reliable turbidity measurements. Whether in freshwater or marine environments, the AAPTUL-7000 proves to be a dependable choice for continuous monitoring needs.",
     features: [
@@ -903,9 +843,10 @@ const products = [
     ],
   },
   {
-    productId: "019",
+    productId: "017",
     name: "AAPCPHL-800A",
     category: "Sensors",
+    dataSheetLink: product017,
     introduction:
       "The AAPCPHL-800A is an advanced sensor for precise monitoring of Rhodamine B Dye in water. With a wide measurement range of 0-500 ug/L and ±5% accuracy, it ensures reliable detection even at low concentrations. Its compact and durable design, featuring IP68/NEMA6P protection, guarantees dependable performance in various environments. The sensor's 3-way 4-20mA output and MODBUS RS485 protocol enable seamless integration with compatible controllers. Ideal for monitoring Blue-Green Algae distribution in waters with turbidity below 50NTU, the AAPCPHL-800A is an invaluable tool for environmental monitoring.",
     img: img16,
@@ -963,9 +904,10 @@ const products = [
     ],
   },
   {
-    productId: "020",
+    productId: "018",
     name: "AAPBGA-800A    ",
     category: "Sensors",
+    dataSheetLink: product018,
     introduction:
       "The AAPBGA-800A is an advanced sensor designed for precise monitoring of Blue-Green Algae in water. With a wide measurement range of 200 to 300,000 cells/mL and an accuracy of ±5%, it ensures reliable detection of algae levels. Its compact design, featuring SUS316L + PVC and POM materials, guarantees durability and efficient performance in various environments. The sensor offers a 3-way 4-20mA output and supports MODBUS RS485 communication, allowing easy integration with compatible controllers. Ideal for multipoint monitoring of uneven algae distribution, the AAPBGA-800A is a valuable tool for environmental monitoring and water quality assessment.",
     img: img16,
@@ -991,7 +933,7 @@ const products = [
           "Three-way relays, programmed response parameter and response value.",
       },
       {
-        name: "Requirements",
+        name: "Requirnments",
         value:
           "Suggest a multipoint monitoring for the distribution of Blue-Green Algae in water as it is very uneven. Water turbidity is below 50NTU.",
       },
@@ -1006,7 +948,7 @@ const products = [
         value: "Sensor: IP68/NEMA6P; Transmitter: IP65/NEMA4X",
       },
       {
-        name: "Cable Length",
+        name: "Cable length",
         value: "Standard: 10m, the maximum may be extended to 100m",
       },
       {
@@ -1028,11 +970,12 @@ const products = [
     ],
   },
   {
-    productId: "021",
+    productId: "019",
     name: "AAPDS-300 ",
     introduction:
       "The AAPDS-300 sensor is a high-precision distance measurement device designed for a range of 2-100cm. With exceptional accuracy of ±0.3cm or 5% of the measured value, it ensures reliable results. Its robust construction and IP68/NEMA6P protection guarantee dependable performance in challenging environments. With a 3-way 4-20mA output and MODBUS RS485 communication, it allows easy integration and networking with other equipment. Ideal for various applications that demand accurate distance measurements.",
     category: "Sensors",
+    dataSheetLink: product019,
     img: img16,
     features: [
       "Built-in Self-Diagnosis: Ensures accurate and reliable data.",
@@ -1092,53 +1035,12 @@ const products = [
       },
     ],
   },
+
   {
-    productId: "022",
-    name: "AAD-IMC-100-12",
-    introduction:
-      "The AAD-IMC-100-12 is a versatile and robust controller designed for efficient and precise monitoring of various parameters. With a large 192*64 LCD display, it offers a user-friendly interface for easy data visualization. The controller supports up to 12 compatible sensors, including pH, DO, EC, TDS, COD, TOC, BOD, TSS, and more, enabling comprehensive multi-parameter monitoring. Its durable ABS housing with IP65 protection ensures reliable performance in challenging environments. With built-in instrument compensation and various output options, the AAD-IMC-100-12 is a reliable solution for a wide range of industrial applications.",
-    img: img17,
-    category: "Controllers",
-    features: [
-      "Touchscreen Colour Display: Large and eye-catching interface for convenient usage.",
-      "Self-Recognition Function: Automatically recognizes up to 12 branded sensors.",
-      "Efficient Calibration: Auxiliary calibration sensor for quick and efficient calibration.",
-      "Multi-Parameter Monitoring: Simultaneously monitors COD, BOD, TSS, TOC, pH, temperature, OIW, Ammonia Nitrogen, Nitrate Nitrogen, dissolved oxygen, conductivity, and more with up to 12 connected sensors.",
-      "Easy Integration: Standard RS485 Modbus-RTU protocol and support for third-party device access.",
-      "High Customizability: Equipment can be customized with logos, names, and cabinet appearance.",
-    ],
-    attributes: [
-      { name: "Part Number", value: "AAD-IMC100.1200.12" },
-      { name: "Controller Size", value: "300*300*170mm" },
-      { name: "Weight", value: "2 kg" },
-      { name: "Display Size", value: "225*160*42mm" },
-      { name: "Operating Temperature", value: "0~55°C, avoid direct sunlight" },
-      { name: "Storage Temperature", value: "-40~85°C" },
-      { name: "Temperature Range", value: "0~50°C" },
-      { name: "Display", value: "192*64 LCD" },
-      {
-        name: "Compatible Sensor Type (Up to 12 sensors)",
-        value: "pH, DO, EC, TDS, COD, TOC, BOD, TSS, TUR, and more...",
-      },
-      {
-        name: "Air Pressure Compensation",
-        value: "Built-in instrument, automatic compensation 50~115KPa",
-      },
-      { name: "Protection Level", value: "ABS housing, IP65" },
-      { name: "Environment Humidity", value: "≤80%" },
-      { name: "Power Supply", value: "110~220V" },
-      { name: "Transmitting Output", value: "4-20mA/RS485/customized" },
-      { name: "Power Consumption", value: "4W" },
-      {
-        name: "Installation Method",
-        value: "Wall or panel mounting (opening size 138*138*)",
-      },
-    ],
-  },
-  {
-    productId: "023",
+    productId: "020",
     name: "AADOIW-800 ",
     category: "Sensors",
+    dataSheetLink: product020,
     introduction:
       "The AADOIW-800 is a highly precise oil in water sensor based on ultraviolet fluorescence technology. It offers a wide detection range from 0 to 50ppm and ensures accurate measurements with a precision of 3%. The sensor is designed for efficient monitoring of oil levels in water, unaffected by suspended solids. With support for RS-485 and MODBUS protocol, it allows seamless integration with compatible controllers like AAD-IC-100-4 and AAD-IMC-100-12. Its durable construction with IP68 protection and optional self-cleaning brush ensures reliable performance in various industrial applications.",
     img: img18,
@@ -1183,9 +1085,10 @@ const products = [
     ],
   },
   {
-    productId: "024",
+    productId: "021",
     name: "AADAN-800S",
     category: "Sensors",
+    dataSheetLink: product021,
     introduction:
       "The AADAN-800S is a highly accurate and reliable sensor designed for measuring Ammonia Nitrogen (NH4-N) levels in water. With a pH range of 4-10 and a precision of ±0.1, it ensures precise and consistent readings. The sensor features a self-cleaning brush that prevents microbial adhesion, extending maintenance intervals. Its IP68 protection allows it to operate up to 10 meters underwater, making it suitable for various environmental applications. Compatible with AAD-IC-100-4 and AAD-IMC-100-12 controllers, the AADAN-800S supports RS-485 and MODBUS protocol for seamless integration and data transmission.",
     img: img19,
@@ -1221,10 +1124,12 @@ const products = [
       { name: "Assembly", value: "RS-485, MODBUS protocol" },
     ],
   },
+
   {
-    productId: "025",
+    productId: "022",
     name: "AADNS-800 ",
     category: "Sensors",
+    dataSheetLink: product022,
     introduction:
       "The AADNS-800 is a highly accurate and reliable sensor designed for measuring Nitrate (NO3-) levels in water. With a pH range of 4-10 and a precision of ±0.1, it ensures precise and consistent readings. The sensor features a digital RS-485 output with MODBUS protocol for seamless data transmission and integration with compatible controllers like AAD-IC-100-4 and AAD-IMC-100-12. Its IP68 protection allows it to operate in harsh environments, while the optional measurement of Potassium and Sodium provides additional flexibility. The AADNS-800 is an efficient and versatile solution for water quality monitoring and environmental applications.",
     img: img20,
@@ -1259,6 +1164,96 @@ const products = [
       },
       { name: "Optional", value: "Potassium, Sodium" },
     ],
+  },
+  {
+    productId: "023",
+    name: "OPTICS-1000",
+    img: img26,
+    category: "Analyzer",
+    dataSheetLink: product023,
+    introduction:
+      "The OPTICS-1000 Analyzer by  Advance Analytik is a cutting-edge water quality analysis instrument designed for precise and efficient measurement of various  compounds in water samples. This highperformance analyzer offers a range of features and benefits, making it ideal for a wide range of applications.",
+    features: [
+      "Conducts multi-compound analysis simultaneously.",
+      "High selectivity and accuracy for specific compound detection.",
+      "Utilizes high-resolution and sensitive optical sensors for accurate measurements.",
+      "Effective mathematical treatment FTLS for advanced data processing.",
+      "Unaffected by interference from turbidity, color, salinity, etc.",
+      "Boasts a low detection limit and wide dynamic range.",
+      "Conducts non-destructive analysis in a short period.",
+      "Range of UV visible spectroscopy - 180 NM to 750 NM Full spectroscopy dual beam measurement.",
+      "Suitable for both indoor and outdoor use.",
+      "Durable stainless-steel construction (IP65 optional) for harsh environments.",
+      "Crafted from high-quality materials for long-lasting performance.",
+      "Minimal maintenance with no regular spare parts replacements.",
+      "Optional multiplexing system for simultaneous analysis of multiple samples.",
+      "User-friendly integrated touch screen for easy operation.",
+      "Requires calibration only once a year, reducing downtime and effort.",
+    ],
+    attributes: [
+      { name: "Flow", value: "0...2 L/min" },
+      { name: "Pressure", value: "≤ 0.5 bars" },
+      { name: "Temperature", value: "5 ... 35°C" },
+      {
+        name: "Display",
+        value: "8.5’’ TFT colour screen 16/9 (LED backlight)",
+      },
+      { name: "Resolution", value: "800 x 480 px" },
+      { name: "Material", value: "Glass to glass" },
+      { name: "Memory", value: "16 GB SD card" },
+      { name: "Data transfer", value: "USB type A" },
+      { name: "Operating temperature", value: "5 ... 55°C" },
+      { name: "Operating humidity", value: "< 90 % RH" },
+      {
+        name: "Voltage",
+        value: "100 ... 240 VAC (50 - 60 Hz) or 24 VDC (Universal)",
+      },
+      { name: "Consumption", value: "< 20 W (60 W max.)" },
+      {
+        name: "Installation",
+        value: "Wall Mounted / Set / Portable (Optional handles)",
+      },
+      { name: "Material", value: "SS316L" },
+      { name: "Dimensions", value: "430x340x195 mm" },
+      { name: "Weight", value: "± 15 kg" },
+      { name: "Protection class", value: "IP65" },
+      { name: "Area Classification", value: "Safe" },
+      {
+        name: "Analog",
+        value: "4-20 mA isolated (Active or Passive) / 500 Ω max",
+      },
+      {
+        name: "Relay",
+        value: "Programmable limit or fault alarms / 5A (NO) 3A (NC) @ 277 VAC",
+      },
+      {
+        name: "Digital",
+        value:
+          "RS485 / Modbus (Slave or Master) - Show value, calibration status, fault status...",
+      },
+      { name: "Type", value: "ENCLOSURE" },
+      { name: "Material", value: "Type" },
+      { name: "Dimensions", value: "Dimensions (HxWxD)" },
+      { name: "Weight", value: "Weight" },
+      { name: "Protection class", value: "Protection class" },
+      { name: "Area Classification", value: "Area Classification" },
+      { name: "Flow", value: "SAMPLE CONDITION" },
+      { name: "Pressure", value: "Pressure" },
+      { name: "Temperature", value: "Temperature" },
+      { name: "Display", value: "CONTROLLER" },
+      { name: "Resolution", value: "Resolution" },
+      { name: "Touch screen", value: "Touch screen" },
+      { name: "Memory", value: "Memory" },
+      { name: "Data transfer", value: "Data transfer" },
+      { name: "Operating temperature", value: "Operating temperature" },
+      { name: "Operating humidity", value: "Operating humidity" },
+      { name: "Analog", value: "COMMUNICATION OUTPUT" },
+      { name: "Relay", value: "Relay" },
+      { name: "Digital", value: "Digital" },
+      { name: "Voltage", value: "POWER SUPPLY" },
+      { name: "Consumption", value: "Consumption" },
+    ],
+    subImg: analyzerTableImg,
   },
 ];
 

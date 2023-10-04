@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "./SoftwareDevelopmentServices.scss";
 import heroImg from "./productImages/softwaredevelopmentHeroImg.jpg";
 import sdServiceSectionOneImg from "./productImages/sdServiceSectionOneImg.png";
@@ -7,6 +7,10 @@ import card2 from "./productImages/sdsectiontwocard2.png";
 import card1 from "./productImages/sdsectiontwocard1.png";
 
 const SoftwareDevelopmentServices = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="sd__service">
       <div className="sd__header">

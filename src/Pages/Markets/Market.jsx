@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import marketData from "./marketData";
 import { useParams, Link } from "react-router-dom";
 import { FaStarOfLife } from "react-icons/fa";
@@ -8,6 +8,10 @@ import "./Market.scss";
 const Market = () => {
   const { marketName } = useParams();
   const market = marketData.find((market) => market.route === marketName);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!market) {
     return <div>Market not found</div>;
@@ -35,7 +39,8 @@ const Market = () => {
               to={"/services/analyticalinstrumentation"}
               className="markets__section__two__content__link"
             >
-              View Products Range <FiArrowUpRight className="markets__section__two__content__link__icon" />
+              View Products Range{" "}
+              <FiArrowUpRight className="markets__section__two__content__link__icon" />
             </Link>
           </div>
         </div>

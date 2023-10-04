@@ -1,9 +1,13 @@
-import React from "react";
+import {useEffect} from "react";
 import headerImg from "./headerImg.jpg";
 import "./PrivacyPolicy.scss";
 import { GoDotFill } from "react-icons/go";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="legalpages">
       <div className="legalpages__header">

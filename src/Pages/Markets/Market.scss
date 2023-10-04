@@ -114,3 +114,31 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .market {
+    .market__header {
+      height: 80vh;
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+    .markets__section__two {
+      flex-direction: column;
+      height: max-content !important;
+      img {
+        width: 100% !important;
+      }
+      .markets__section__two__content__wrapper {
+        margin-top: 5%;
+        height: max-content !important;
+        .markets__section__two__content__link{
+          margin-top: 2%;
+        }
+      }
+    }
+  .market__des{
+    margin-top: 10% !important;
+  }
+  }
+}

@@ -9,7 +9,7 @@ const Loader = () => {
     // Simulate loading time
     setTimeout(() => {
       setVisible(false);
-    }, 4000);
+    }, 10000);
   }, []);
 
   return (

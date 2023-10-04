@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "./Career.scss";
 import careerheaderunderline from "./careerheaderunderline.png";
 import careersImg from "./careersImg.jpg";
@@ -9,6 +9,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Faq from "./Faq";
 
 const Career = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="career">
       <div className="careers__header">

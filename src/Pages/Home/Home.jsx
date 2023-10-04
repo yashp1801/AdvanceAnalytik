@@ -1,22 +1,29 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Home.scss";
+import CompanyProfile from "./AdvanceAnalytikProfile.pdf";
 import HeroSlider from "./Components/HeroSlider";
-import HomeBlogSlider from "./Components/HomeBlogSlider";
 import homeAbout from "./images/homeAbout.jpg";
 import { Link } from "react-router-dom";
 import sustainability from "./images/sustainability.png";
 import eandc from "./images/homeservicescard.jpg";
 import softwaredevelopmentcard from "./images/softwaredevelopmentcard.jpg";
-import companyprofile from "./images/companyprofile.png";
 import homeproductscard from "./images/homeservicesproductscard.png";
 import { BsArrowRightCircleFill, BsArrowRightShort } from "react-icons/bs";
-import { FaStarOfLife } from "react-icons/fa";
+import { FaLessThanEqual, FaStarOfLife } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { FiArrowUpRight } from "react-icons/fi";
+import NewsLetter from "../../Global/NewsLetter/NewsLetter";
 
 const Home = () => {
+
+
+  // For Scrolling to top 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Animation variants
   const fadeInVariants = {
     hidden: { opacity: 0 },
@@ -39,13 +46,9 @@ const Home = () => {
     visible: { y: 0, opacity: 1 },
   };
 
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Animation triggers only once
-  });
   return (
     <div className="home">
       <HeroSlider />
-
       <motion.div
         className="home__content"
         initial="hidden"
@@ -53,8 +56,14 @@ const Home = () => {
         variants={slideUpVariants}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        <div className="home__about">
-          <img src={homeAbout} alt="img" />
+        <div className="home__about" >
+          <div className="home__about__img__wrapper">
+            {/*  */}
+            <motion.img
+              src={homeAbout}
+              alt="img"
+            />
+          </div>
           <div className="home__description">
             <h1>Pioneering Analytical Excellence</h1>
             <motion.p>
@@ -92,7 +101,10 @@ const Home = () => {
                   vision to achieve unprecedented accuracy and insights.
                 </p>
               </div>
-              <Link to="/about" className="home__services__btn">
+              <Link
+                to="/services/analyticalinstrumentation"
+                className="home__services__btn"
+              >
                 View Products Range{" "}
                 <BsArrowRightCircleFill className="home__services__btn__icon" />
               </Link>
@@ -108,8 +120,11 @@ const Home = () => {
                   bridge the gap between challenges and innovation.
                 </p>
               </div>
-              <Link to="/about" className="home__services__btn">
-                View Products Range{" "}
+              <Link
+                to="/services/engineeringandconsultancyservices"
+                className="home__services__btn"
+              >
+                Learn More
                 <BsArrowRightCircleFill className="home__services__btn__icon" />
               </Link>
             </div>
@@ -117,7 +132,6 @@ const Home = () => {
               <img src={softwaredevelopmentcard} alt="" />
               <div className="home__services__card__content">
                 <h1>
-                  {" "}
                   Software Solutions that <br /> Redefine Possibilities
                 </h1>
                 <p>
@@ -126,8 +140,11 @@ const Home = () => {
                   unlocking insights that drive your decisions and strategies.
                 </p>
               </div>
-              <Link to="/about" className="home__services__btn">
-                View Products Range{" "}
+              <Link
+                to="/services/softwaredevelopmentservices"
+                className="home__services__btn"
+              >
+                Learn More
                 <BsArrowRightCircleFill className="home__services__btn__icon" />
               </Link>
             </div>
@@ -174,19 +191,22 @@ const Home = () => {
               <FiArrowUpRight className="home__cp__card__link__icon" />
             </span>
           </Link>
-          <Link className="home__cp__card">
+          <a
+            className="home__cp__card"
+            href={CompanyProfile}
+            download={"Advance Analytik Company Profile"}
+          >
             <FaStarOfLife className="home__cp__card__icon" />
             <p>
               Explore our world of advanced analytical solutions. Download our
               profile to discover how we drive innovation in industries.
             </p>
-            <a href="/" className="home__cp__card__link">
+            <span className="home__cp__card__link">
               Download Profile{" "}
               <FiDownload className="home__cp__card__link__icon" />
-            </a>
-          </Link>
+            </span>
+          </a>
         </div>
-        <HomeBlogSlider />
       </motion.div>
     </div>
   );

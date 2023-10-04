@@ -11,6 +11,7 @@ const Products = () => {
   const [productId, setProductId] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,6 +23,8 @@ const Products = () => {
       setActiveTab(location.state.activeTab);
     }
   }, [location.state]);
+
+
 
   // Filter products based on the active tab
   const filteredProducts =

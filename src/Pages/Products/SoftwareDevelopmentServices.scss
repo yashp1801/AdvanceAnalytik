@@ -99,7 +99,7 @@
       align-items: center;
       margin: 50px auto;
       max-width: 800px;
-      h1{
+      h1 {
         margin-bottom: 5%;
       }
       .process-step {
@@ -109,17 +109,44 @@
         margin-bottom: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         width: 100%;
-  
+
         h2 {
           margin-top: 0;
         }
-  
+
         p {
           margin-bottom: 0;
         }
       }
     }
-
-  
+  }
+  @media screen and (max-width: 1000px) {
+    .sd__header {
+      height: 70vh;
+      .sd__hero__title {
+        font-size: 4rem;
+      }
+    }
+    .sd__services__wrapper {
+      .sd__services__section__one {
+        flex-direction: column-reverse;
+        .sd__services__section__one__content__wrapper {
+          width: 100%;
+          margin-top: 5%;
+          border-bottom: 1px solid rgb(224, 224, 224);
+          padding-bottom: 5%;
+        }
+        .sd__services__section__one__img__wrapper {
+          width: 100%;
+        }
+      }
+      .sd__services__section__two {
+        flex-direction: column;
+        .sd__services__section__two__card {
+          margin-top: 2%;
+          text-align: center;
+        }
+      }
+    }
   }
 }

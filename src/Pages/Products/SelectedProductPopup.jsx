@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { HiOutlineDownload } from "react-icons/hi";
 import products from "./productsData";
-// import MadeInHungary from "./MadeHungary.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import RequestQuotePopup from "./Components/RequestQuotePopup";
-
+import { BsArrowRightShort } from "react-icons/bs";
+import { PiDownloadSimple } from "react-icons/pi";
 import "./Products.scss";
 
 const SelectedProductPopup = () => {
@@ -14,48 +13,53 @@ const SelectedProductPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("features");
 
-  const handleClick = () => {
-    navigate("/products");
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleClick = () => {
+    navigate("/products");
+  };
+
   // Find the product that matches the productId
+
   const selectedProduct = products.find(
     (product) => product.productId === productId
   );
 
   if (!selectedProduct) {
-    // Handle the case when the product is not found
+    // Handle when products not found
     return <div>Product not found!</div>;
   }
 
   return (
     <div className="selectedproductpopup">
       <div className="selectedproductpopup__container">
-        <div className="selectedproductpopup__header">
-          <h1> ADVANCE ANALYTIK {selectedProduct.name}</h1>
-        </div>
         <div className="selectedproductpopup__content__wrapper">
           <div className="selectedproductpopup__content__img__wrapper">
             <img src={selectedProduct.img} alt="img" />
           </div>
           <div className="selectedproductpopup__content__introduction__wrapper">
-            <p>{selectedProduct.introduction}</p>
+            <div className="selectedproductpopup__content__introduction__content">
+              <h1> {selectedProduct.name}</h1>
+              <p>{selectedProduct.introduction}</p>
+            </div>
             <div className="selectedproductpopup__content__introduction__btn__wrapper">
               <a
-                href="/"
+                href={selectedProduct.dataSheetLink}
+                download={`${selectedProduct.name} Data Sheet`}
                 className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn"
               >
-                Data Sheet
+                Data Sheet{" "}
+                <PiDownloadSimple className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn__icon" />
               </a>
               <a
                 onClick={() => setIsOpen(true)}
+                style={{ backgroundColor: "#141414" }}
                 className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn"
               >
-                Request a quote
+                Request quote{" "}
+                <BsArrowRightShort className="selectedproductpopup__content__introduction__wrapper__dataSheet__download__btn__icon" />
               </a>
             </div>
           </div>
@@ -107,6 +111,7 @@ const SelectedProductPopup = () => {
           selectedProduct={selectedProduct.name}
         />
       )}
+      {/* More products range to be added */}
     </div>
   );
 };

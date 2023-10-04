@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "./About.scss";
 import { Link } from "react-router-dom";
 import watertreatmentplantImg from "./images/watertreatmentplant.jpg";
@@ -12,6 +12,10 @@ import { BiSupport } from "react-icons/bi";
 import { FaUserTie } from "react-icons/fa";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="about__page">
       <div className="about__page__container">

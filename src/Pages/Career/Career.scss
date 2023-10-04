@@ -1,5 +1,6 @@
 .career {
   height: 100%;
+  user-select: none;
   .careers__header {
     background-color: #d50100;
     height: 50vh;
@@ -175,6 +176,7 @@
     flex-direction: column;
     justify-content: flex-end !important;
     align-items: flex-start !important;
+    height: 70vh !important;
     p {
       width: 100% !important;
       margin-top: 5%;
